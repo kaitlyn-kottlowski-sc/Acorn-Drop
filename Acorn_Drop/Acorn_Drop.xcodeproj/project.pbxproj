@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0C0D5AB2373296700BAFE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */; };
+		B0C0D5AD2373296700BAFE0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5AC2373296700BAFE0E /* ViewController.swift */; };
+		B0C0D5B02373296700BAFE0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D5AE2373296700BAFE0E /* Main.storyboard */; };
+		B0C0D5B22373296800BAFE0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D5B12373296800BAFE0E /* Assets.xcassets */; };
+		B0C0D5B52373296800BAFE0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D5B32373296800BAFE0E /* LaunchScreen.storyboard */; };
+		B0C0D5C02373296800BAFE0E /* Acorn_DropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5BF2373296800BAFE0E /* Acorn_DropTests.swift */; };
+		B0C0D5CB2373296800BAFE0E /* Acorn_DropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5CA2373296800BAFE0E /* Acorn_DropUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0C0D5BC2373296800BAFE0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0C0D59F2373296700BAFE0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0C0D5A62373296700BAFE0E;
+			remoteInfo = Acorn_Drop;
+		};
+		B0C0D5C72373296800BAFE0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0C0D59F2373296700BAFE0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0C0D5A62373296700BAFE0E;
+			remoteInfo = Acorn_Drop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B0C0D5A72373296700BAFE0E /* Acorn_Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acorn_Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0C0D5AC2373296700BAFE0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0C0D5AF2373296700BAFE0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0C0D5B12373296800BAFE0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0C0D5B42373296800BAFE0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0C0D5B62373296800BAFE0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0C0D5BB2373296800BAFE0E /* Acorn_DropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Acorn_DropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C0D5BF2373296800BAFE0E /* Acorn_DropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acorn_DropTests.swift; sourceTree = "<group>"; };
+		B0C0D5C12373296800BAFE0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0C0D5C62373296800BAFE0E /* Acorn_DropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Acorn_DropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C0D5CA2373296800BAFE0E /* Acorn_DropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acorn_DropUITests.swift; sourceTree = "<group>"; };
+		B0C0D5CC2373296800BAFE0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0C0D5A42373296700BAFE0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0C0D5B82373296800BAFE0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0C0D5C32373296800BAFE0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0C0D59E2373296700BAFE0E = {
+			isa = PBXGroup;
+			children = (
+				B0C0D5A92373296700BAFE0E /* Acorn_Drop */,
+				B0C0D5BE2373296800BAFE0E /* Acorn_DropTests */,
+				B0C0D5C92373296800BAFE0E /* Acorn_DropUITests */,
+				B0C0D5A82373296700BAFE0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B0C0D5A82373296700BAFE0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0C0D5A72373296700BAFE0E /* Acorn_Drop.app */,
+				B0C0D5BB2373296800BAFE0E /* Acorn_DropTests.xctest */,
+				B0C0D5C62373296800BAFE0E /* Acorn_DropUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0C0D5A92373296700BAFE0E /* Acorn_Drop */ = {
+			isa = PBXGroup;
+			children = (
+				B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */,
+				B0C0D5AC2373296700BAFE0E /* ViewController.swift */,
+				B0C0D5AE2373296700BAFE0E /* Main.storyboard */,
+				B0C0D5B12373296800BAFE0E /* Assets.xcassets */,
+				B0C0D5B32373296800BAFE0E /* LaunchScreen.storyboard */,
+				B0C0D5B62373296800BAFE0E /* Info.plist */,
+			);
+			path = Acorn_Drop;
+			sourceTree = "<group>";
+		};
+		B0C0D5BE2373296800BAFE0E /* Acorn_DropTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0C0D5BF2373296800BAFE0E /* Acorn_DropTests.swift */,
+				B0C0D5C12373296800BAFE0E /* Info.plist */,
+			);
+			path = Acorn_DropTests;
+			sourceTree = "<group>";
+		};
+		B0C0D5C92373296800BAFE0E /* Acorn_DropUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B0C0D5CA2373296800BAFE0E /* Acorn_DropUITests.swift */,
+				B0C0D5CC2373296800BAFE0E /* Info.plist */,
+			);
+			path = Acorn_DropUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0C0D5A62373296700BAFE0E /* Acorn_Drop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0C0D5CF2373296800BAFE0E /* Build configuration list for PBXNativeTarget "Acorn_Drop" */;
+			buildPhases = (
+				B0C0D5A32373296700BAFE0E /* Sources */,
+				B0C0D5A42373296700BAFE0E /* Frameworks */,
+				B0C0D5A52373296700BAFE0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Acorn_Drop;
+			productName = Acorn_Drop;
+			productReference = B0C0D5A72373296700BAFE0E /* Acorn_Drop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0C0D5BA2373296800BAFE0E /* Acorn_DropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0C0D5D22373296800BAFE0E /* Build configuration list for PBXNativeTarget "Acorn_DropTests" */;
+			buildPhases = (
+				B0C0D5B72373296800BAFE0E /* Sources */,
+				B0C0D5B82373296800BAFE0E /* Frameworks */,
+				B0C0D5B92373296800BAFE0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0C0D5BD2373296800BAFE0E /* PBXTargetDependency */,
+			);
+			name = Acorn_DropTests;
+			productName = Acorn_DropTests;
+			productReference = B0C0D5BB2373296800BAFE0E /* Acorn_DropTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B0C0D5C52373296800BAFE0E /* Acorn_DropUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0C0D5D52373296800BAFE0E /* Build configuration list for PBXNativeTarget "Acorn_DropUITests" */;
+			buildPhases = (
+				B0C0D5C22373296800BAFE0E /* Sources */,
+				B0C0D5C32373296800BAFE0E /* Frameworks */,
+				B0C0D5C42373296800BAFE0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0C0D5C82373296800BAFE0E /* PBXTargetDependency */,
+			);
+			name = Acorn_DropUITests;
+			productName = Acorn_DropUITests;
+			productReference = B0C0D5C62373296800BAFE0E /* Acorn_DropUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0C0D59F2373296700BAFE0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Jesse Luangaphayvong";
+				TargetAttributes = {
+					B0C0D5A62373296700BAFE0E = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					B0C0D5BA2373296800BAFE0E = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = B0C0D5A62373296700BAFE0E;
+					};
+					B0C0D5C52373296800BAFE0E = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = B0C0D5A62373296700BAFE0E;
+					};
+				};
+			};
+			buildConfigurationList = B0C0D5A22373296700BAFE0E /* Build configuration list for PBXProject "Acorn_Drop" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0C0D59E2373296700BAFE0E;
+			productRefGroup = B0C0D5A82373296700BAFE0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0C0D5A62373296700BAFE0E /* Acorn_Drop */,
+				B0C0D5BA2373296800BAFE0E /* Acorn_DropTests */,
+				B0C0D5C52373296800BAFE0E /* Acorn_DropUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0C0D5A52373296700BAFE0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0C0D5B52373296800BAFE0E /* LaunchScreen.storyboard in Resources */,
+				B0C0D5B22373296800BAFE0E /* Assets.xcassets in Resources */,
+				B0C0D5B02373296700BAFE0E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0C0D5B92373296800BAFE0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0C0D5C42373296800BAFE0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0C0D5A32373296700BAFE0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0C0D5AD2373296700BAFE0E /* ViewController.swift in Sources */,
+				B0C0D5AB2373296700BAFE0E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0C0D5B72373296800BAFE0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0C0D5C02373296800BAFE0E /* Acorn_DropTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0C0D5C22373296800BAFE0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0C0D5CB2373296800BAFE0E /* Acorn_DropUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0C0D5BD2373296800BAFE0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0C0D5A62373296700BAFE0E /* Acorn_Drop */;
+			targetProxy = B0C0D5BC2373296800BAFE0E /* PBXContainerItemProxy */;
+		};
+		B0C0D5C82373296800BAFE0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0C0D5A62373296700BAFE0E /* Acorn_Drop */;
+			targetProxy = B0C0D5C72373296800BAFE0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B0C0D5AE2373296700BAFE0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0C0D5AF2373296700BAFE0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B0C0D5B32373296800BAFE0E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0C0D5B42373296800BAFE0E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0C0D5CD2373296800BAFE0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B0C0D5CE2373296800BAFE0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0C0D5D02373296800BAFE0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Acorn_Drop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "simpson.Acorn-Drop";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0C0D5D12373296800BAFE0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Acorn_Drop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "simpson.Acorn-Drop";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B0C0D5D32373296800BAFE0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Acorn_DropTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "simpson.Acorn-DropTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Acorn_Drop.app/Acorn_Drop";
+			};
+			name = Debug;
+		};
+		B0C0D5D42373296800BAFE0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Acorn_DropTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "simpson.Acorn-DropTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Acorn_Drop.app/Acorn_Drop";
+			};
+			name = Release;
+		};
+		B0C0D5D62373296800BAFE0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Acorn_DropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "simpson.Acorn-DropUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Acorn_Drop;
+			};
+			name = Debug;
+		};
+		B0C0D5D72373296800BAFE0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Acorn_DropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "simpson.Acorn-DropUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Acorn_Drop;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0C0D5A22373296700BAFE0E /* Build configuration list for PBXProject "Acorn_Drop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0C0D5CD2373296800BAFE0E /* Debug */,
+				B0C0D5CE2373296800BAFE0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0C0D5CF2373296800BAFE0E /* Build configuration list for PBXNativeTarget "Acorn_Drop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0C0D5D02373296800BAFE0E /* Debug */,
+				B0C0D5D12373296800BAFE0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0C0D5D22373296800BAFE0E /* Build configuration list for PBXNativeTarget "Acorn_DropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0C0D5D32373296800BAFE0E /* Debug */,
+				B0C0D5D42373296800BAFE0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0C0D5D52373296800BAFE0E /* Build configuration list for PBXNativeTarget "Acorn_DropUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0C0D5D62373296800BAFE0E /* Debug */,
+				B0C0D5D72373296800BAFE0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0C0D59F2373296700BAFE0E /* Project object */;
+}
