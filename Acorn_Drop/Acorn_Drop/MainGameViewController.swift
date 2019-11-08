@@ -7,24 +7,37 @@
 //
 
 import UIKit
+import SpriteKit
 
 class MainGameViewController: UIViewController {
 
+//    var gravity: UIGravityBehavior!
+//    var animator: UIDynamicAnimator!
+//    var acornArray = Array<UIImageView>()
+//    
+//     let screenSize = UIScreen.main.bounds
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
+//        // Do any additional setup after loading the view.
+//    
+//        // Reference: https://www.sitepoint.com/using-uikit-dynamics-swift-animate-apps/
+//        let screenWidth = screenSize.width
+//
+//        let x = CGFloat.random(in:0 ..< screenWidth - 100)
+//        let y = CGFloat.random(in: -300 ..< -50)
+//        let acorn = Acorn.init(x: x, y:y)
+//        acornArray.append(acorn.acorn_image)
+//  
+//        self.view.addSubview(acorn.acorn_image)
+//
+//        animator = UIDynamicAnimator(referenceView: view)
+//        gravity = UIGravityBehavior(items: acornArray)
+//        gravity.magnitude = CGFloat(0.1)
+//        animator.addBehavior(gravity)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+ 
 
 }
