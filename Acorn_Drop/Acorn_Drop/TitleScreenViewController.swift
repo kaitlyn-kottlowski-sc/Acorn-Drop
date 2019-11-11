@@ -10,11 +10,21 @@ import UIKit
 
 class ViewController: UIViewController
 {
+    
+    @IBOutlet weak var startButton: UIButton!
+    
+    @IBOutlet weak var leaderboardButton: UIButton!
+    
+    @IBOutlet weak var settingButton: UIButton!
+    
     public var attribute = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        startButton.layer.cornerRadius = 4
+        leaderboardButton.layer.cornerRadius = 4
+        settingButton.layer.cornerRadius = 4
     }
     
     
