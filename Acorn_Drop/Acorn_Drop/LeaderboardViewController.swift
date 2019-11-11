@@ -11,21 +11,43 @@ import SpriteKit
 
 class LeaderboardViewController: UIViewController {
 
+    var scoreList = [ScoreData]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        // Resource #1: https://www.journaldev.com/21839/ios-swift-json-parsing-tutorial
+               // Resource #2: https://www.youtube.com/watch?v=ih20QtEVCa0
+               guard let path = Bundle.main.path(forResource: "scores", ofType: "json") else {return}
+               let url = URL(fileURLWithPath: path)
+
+                   guard let data = try? Data(contentsOf: url) else {return}
+                   
+                   guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else {return}
+
+                   if let JSON = json as? [String: Any] {
+                       
+                       guard let jsonArray = JSON["scores"] as? [[String: Any]] else {return}
+                       
+                       for json in jsonArray {
+           
+                           scoreList.append(ScoreData.init(json))
+
+                           
+                       }
+                    
+                    // Reference: http://studyswift.blogspot.com/2017/05/how-to-sort-array-and-dictionary.html
+                    scoreList = scoreList.sorted(by: {$0.score > $1.score})
+                   
+                    for high in scoreList{
+                        print(high.userName)
+                        print(high.score)
+                    }
+                   }
+                   
+               }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
-}
+    
