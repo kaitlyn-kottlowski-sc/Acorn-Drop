@@ -13,17 +13,18 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
 {
     var backgroundPicture: SKEmitterNode
     var player : SKSpriteNode
-    var playerColor = UIColor.orange
+    var playerColor: UIColor
     //var backgroundColor = UIColor.blue
-    var playerSize = CGSize(width: 50, height: 50)
+    var playerSize: CGSize
     var scoreLabel: SKLabelNode
-       var score: Int = 0
-       {
-           didSet
-           {
-                   scoreLabel.text = "Score: \(score)"
-           }
-       }
+    var score: Int = 0
+    
+    required init?(coder aDecoder: NSCoder) {
+        playerColor = UIColor.blue
+        playerSize = CGSize(width: 50, height: 50)
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     override func didMove(to view: SKView) {
         // set background
@@ -32,7 +33,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         spawnPlayer()
         
         self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
-        self.physicsWorld.contactDelegate = self as? SKPhysicsContactDelegate
+        self.physicsWorld.contactDelegate = self
         
         scoreLabel = SKLabelNode(text: "Score: 0")
         scoreLabel.position = CGPoint(x: 100, y: self.frame.size.height - 60)
