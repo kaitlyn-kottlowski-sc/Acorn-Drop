@@ -17,6 +17,9 @@ class ViewController: UIViewController
     
     @IBOutlet weak var settingButton: UIButton!
     
+    //private let buttonWidth = 100
+    
+    
     public var attribute = 0
 
     override func viewDidLoad() {
@@ -25,6 +28,8 @@ class ViewController: UIViewController
         startButton.layer.cornerRadius = 4
         leaderboardButton.layer.cornerRadius = 4
         settingButton.layer.cornerRadius = 4
+        //startButton.widthAnchor.constraint(equalToConstant: buttonWidth)
+        
     }
     
     
