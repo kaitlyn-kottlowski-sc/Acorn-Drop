@@ -18,6 +18,7 @@
 		B0C0D5D923732C8D00BAFE0E /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5D823732C8D00BAFE0E /* MainGameViewController.swift */; };
 		B0C0D5DB23732DDE00BAFE0E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */; };
 		B0C0D5DD23732DEC00BAFE0E /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */; };
+		B0F74CF7237C63AC00AAEA3A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0F74CF6237C63AC00AAEA3A /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B0C0D5D823732C8D00BAFE0E /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
 		B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		B0F74CF6237C63AC00AAEA3A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				B0C0D5AC2373296700BAFE0E /* TitleScreenViewController.swift */,
 				B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */,
 				B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */,
+				B0F74CF6237C63AC00AAEA3A /* GameScene.sks */,
 				B0AB48082375CC3000C8CFAD /* PlayerMovement.swift */,
 				B0C0D5D823732C8D00BAFE0E /* MainGameViewController.swift */,
 				B0C0D5AE2373296700BAFE0E /* Main.storyboard */,
@@ -241,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F74CF7237C63AC00AAEA3A /* GameScene.sks in Resources */,
 				B0C0D5B52373296800BAFE0E /* LaunchScreen.storyboard in Resources */,
 				B0C0D5B22373296800BAFE0E /* Assets.xcassets in Resources */,
 				B0C0D5B02373296700BAFE0E /* Main.storyboard in Resources */,
