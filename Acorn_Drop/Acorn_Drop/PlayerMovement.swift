@@ -33,7 +33,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     func spawnPlayer()
     {
         //first line is place holder, replace color with imageNamed: "FileString"
-        player = SKSpriteNode(color: playerColor, size: playerSize)
+        player = SKSpriteNode(imageNamed: "Squirrel")
         player.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 520)
         self.addChild(player)
     }
@@ -59,6 +59,13 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     @objc func addAcorn()
     {
         let acorn = SKSpriteNode(imageNamed: "acorn")
+        
+        let randomAcornPosition = GKRandomDistribution(lowestValue: 0, highestValue: 414)
+        let position = CGFloat(randomAcornPosition.nextInt())
+        
+        acorn.position = CGPoint(x: position, y: self.frame.size.height + acorn.size.height)
+        acorn.physicsBody = SKPhysicsBody(rectangleOf: acorn.size)
+        acorn.physicsBody?.isDynamic = true
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
