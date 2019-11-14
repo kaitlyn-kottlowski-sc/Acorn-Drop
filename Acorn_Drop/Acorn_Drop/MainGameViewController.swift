@@ -10,8 +10,15 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+
 class MainGameViewController: UIViewController {
 
+//    var gravity: UIGravityBehavior!
+//    var animator: UIDynamicAnimator!
+//    var acornArray = Array<UIImageView>()
+//    
+//     let screenSize = UIScreen.main.bounds
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,4 +54,5 @@ class MainGameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+
 }
