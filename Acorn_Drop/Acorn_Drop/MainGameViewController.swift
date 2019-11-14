@@ -8,6 +8,8 @@
 
 import UIKit
 import SpriteKit
+import GameplayKit
+
 
 class MainGameViewController: UIViewController {
 
@@ -19,25 +21,38 @@ class MainGameViewController: UIViewController {
 //    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        // Do any additional setup after loading the view.
-//    
-//        // Reference: https://www.sitepoint.com/using-uikit-dynamics-swift-animate-apps/
-//        let screenWidth = screenSize.width
-//
-//        let x = CGFloat.random(in:0 ..< screenWidth - 100)
-//        let y = CGFloat.random(in: -300 ..< -50)
-//        let acorn = Acorn.init(x: x, y:y)
-//        acornArray.append(acorn.acorn_image)
-//  
-//        self.view.addSubview(acorn.acorn_image)
-//
-//        animator = UIDynamicAnimator(referenceView: view)
-//        gravity = UIGravityBehavior(items: acornArray)
-//        gravity.magnitude = CGFloat(0.1)
-//        animator.addBehavior(gravity)
-
+        
+        if let view = self.view as! SKView? {
+            // Load the SKScene from 'GameScene.sks'
+            if let scene = SKScene(fileNamed: "GameScene") {
+                // Set the scale mode to scale to fit the window
+                scene.scaleMode = .aspectFill
+                
+                // Present the scene
+                view.presentScene(scene)
+            }
+            
+            view.ignoresSiblingOrder = true
+            
+            view.showsFPS = true
+            view.showsNodeCount = true
+        }
     }
- 
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
 }
