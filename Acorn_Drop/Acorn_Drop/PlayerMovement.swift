@@ -18,7 +18,12 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     var playerSize = CGSize(width: 50, height: 50)
     var scoreLabel: SKLabelNode!
     var score: Int = 0
+    
     var gameTimer:Timer!
+    var possibleFallingObjects = ["acorn"]
+    
+    let acornCategory:UInt32 = 0x1 << 1
+    let squirrelCategory:UInt32 = 0x1 << 0
     
     override func didMove(to view: SKView) {
         // set background
@@ -58,14 +63,31 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     @objc func addAcorn()
     {
-        let acorn = SKSpriteNode(imageNamed: "acorn")
+        possibleFallingObjects = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleFallingObjects) as! [String]
+        let acorn = SKSpriteNode(imageNamed: possibleFallingObjects[0])
         
         let randomAcornPosition = GKRandomDistribution(lowestValue: 0, highestValue: 414)
         let position = CGFloat(randomAcornPosition.nextInt())
         
         acorn.position = CGPoint(x: position, y: self.frame.size.height + acorn.size.height)
+        
         acorn.physicsBody = SKPhysicsBody(rectangleOf: acorn.size)
         acorn.physicsBody?.isDynamic = true
+        
+        acorn.physicsBody?.categoryBitMask = acornCategory
+        acorn.physicsBody?.contactTestBitMask = squirrelCategory
+        acorn.physicsBody?.collisionBitMask = 0
+        
+        self.addChild(acorn)
+        
+        let animationDuration:TimeInterval = 6
+        
+        var actionArray = [SKAction]()
+        
+        actionArray.append(SKAction.move(to: CGPoint(x: position, y: -acorn.size.height), duration: animationDuration))
+        actionArray.append(SKAction.removeFromParent())
+        
+        acorn.run(SKAction.sequence(actionArray))
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
