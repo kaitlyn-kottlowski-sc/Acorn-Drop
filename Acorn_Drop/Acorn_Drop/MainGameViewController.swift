@@ -21,10 +21,10 @@ class MainGameViewController: UIViewController {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "PlayerMovement")
             {
-                // Set the scale mode to scale to fit the window
+                 //Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
-                // Present the scene
+                 //Present the scene
                 view.presentScene(scene)
             }
             
