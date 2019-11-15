@@ -17,6 +17,10 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 .DS_Store
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f57fe58c55fff1ba7eebae680469d7631dacf6b
 ## Other
 *.moved-aside
 *.xccheckout

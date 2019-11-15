@@ -16,38 +16,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psm-Az-Ivh">
-                                <rect key="frame" x="318" y="77" width="87" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Psm-Az-Ivh">
+                                <rect key="frame" x="295" y="77" width="109" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="syo-1B-pJ4"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Leaderboard"/>
                                 <connections>
                                     <segue destination="BHf-dU-zGW" kind="show" id="9ro-Ek-Na1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihH-dm-Wxw">
-                                <rect key="frame" x="179" y="337" width="57" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihH-dm-Wxw">
+                                <rect key="frame" x="152" y="433" width="110" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Eut-5q-m3d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="xwk-Kg-fEg" kind="show" id="kh1-HJ-yWn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXY-dQ-Xea">
-                                <rect key="frame" x="169" y="433" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXY-dQ-Xea">
+                                <rect key="frame" x="152" y="567" width="110" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="XS6-Vo-Mah"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Options"/>
+                                <state key="normal" title="Settings"/>
                                 <connections>
                                     <segue destination="Mp3-NZ-dND" kind="show" id="zU6-e4-UsU"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Squirrel" translatesAutoresizingMaskIntoConstraints="NO" id="cf0-4x-xoj">
+                                <rect key="frame" x="62" y="171" width="313" height="169"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ihH-dm-Wxw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="3P5-jY-7K5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Psm-Az-Ivh" secondAttribute="trailing" constant="10" id="71W-cK-UOy"/>
+                            <constraint firstItem="cXY-dQ-Xea" firstAttribute="top" secondItem="ihH-dm-Wxw" secondAttribute="bottom" constant="104" id="76b-jW-QlY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cXY-dQ-Xea" secondAttribute="trailing" constant="152" id="99d-2B-pXF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cf0-4x-xoj" secondAttribute="trailing" constant="39" id="BhI-du-ivk"/>
+                            <constraint firstItem="cXY-dQ-Xea" firstAttribute="top" secondItem="ihH-dm-Wxw" secondAttribute="bottom" constant="104" id="DBm-WD-pI7"/>
+                            <constraint firstItem="cXY-dQ-Xea" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="Hd0-jW-ZaN"/>
+                            <constraint firstItem="Psm-Az-Ivh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="HgT-d2-U8g"/>
+                            <constraint firstItem="ihH-dm-Wxw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="389" id="MFO-mZ-D1J"/>
+                            <constraint firstItem="ihH-dm-Wxw" firstAttribute="top" secondItem="cf0-4x-xoj" secondAttribute="bottom" constant="93" id="ZG7-DD-tHn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ihH-dm-Wxw" secondAttribute="trailing" constant="152" id="ZuR-ly-gz1"/>
+                            <constraint firstItem="cf0-4x-xoj" firstAttribute="top" secondItem="Psm-Az-Ivh" secondAttribute="bottom" constant="64" id="eb2-aK-0h1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Psm-Az-Ivh" secondAttribute="bottom" constant="755" id="fck-Aq-Okj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cXY-dQ-Xea" secondAttribute="bottom" constant="265" id="jFf-wb-NQ7"/>
+                            <constraint firstItem="Psm-Az-Ivh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="295" id="qcS-R9-xye"/>
+                            <constraint firstItem="cf0-4x-xoj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="wDm-Ae-le5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -135,4 +163,7 @@
             <point key="canvasLocation" x="830" y="19"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Squirrel" width="100" height="110"/>
+    </resources>
 </document>
