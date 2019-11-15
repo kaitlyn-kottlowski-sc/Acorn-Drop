@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		854FC766237A0D810037A76C /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854FC765237A0D810037A76C /* ScoreData.swift */; };
+		854FC768237A0EB10037A76C /* scores.json in Resources */ = {isa = PBXBuildFile; fileRef = 854FC767237A0EB00037A76C /* scores.json */; };
+		85A143372375D57B0085B6DF /* Acorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A143362375D57B0085B6DF /* Acorn.swift */; };
+
 		B0AB48092375CC3000C8CFAD /* PlayerMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB48082375CC3000C8CFAD /* PlayerMovement.swift */; };
+
 		B0C0D5AB2373296700BAFE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */; };
 		B0C0D5AD2373296700BAFE0E /* TitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5AC2373296700BAFE0E /* TitleScreenViewController.swift */; };
 		B0C0D5B02373296700BAFE0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D5AE2373296700BAFE0E /* Main.storyboard */; };
@@ -18,6 +23,7 @@
 		B0C0D5D923732C8D00BAFE0E /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5D823732C8D00BAFE0E /* MainGameViewController.swift */; };
 		B0C0D5DB23732DDE00BAFE0E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */; };
 		B0C0D5DD23732DEC00BAFE0E /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */; };
+		B0F74CF7237C63AC00AAEA3A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0F74CF6237C63AC00AAEA3A /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+
+		854FC765237A0D810037A76C /* ScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
+		854FC767237A0EB00037A76C /* scores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = scores.json; sourceTree = "<group>"; };
+		85A143362375D57B0085B6DF /* Acorn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acorn.swift; sourceTree = "<group>"; };
+
 		B0AB48082375CC3000C8CFAD /* PlayerMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMovement.swift; sourceTree = "<group>"; };
+
 		B0C0D5A72373296700BAFE0E /* Acorn_Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acorn_Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C0D5AC2373296700BAFE0E /* TitleScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +67,7 @@
 		B0C0D5D823732C8D00BAFE0E /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
 		B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		B0F74CF6237C63AC00AAEA3A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,12 +122,16 @@
 				B0C0D5AC2373296700BAFE0E /* TitleScreenViewController.swift */,
 				B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */,
 				B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */,
+				B0F74CF6237C63AC00AAEA3A /* GameScene.sks */,
 				B0AB48082375CC3000C8CFAD /* PlayerMovement.swift */,
 				B0C0D5D823732C8D00BAFE0E /* MainGameViewController.swift */,
 				B0C0D5AE2373296700BAFE0E /* Main.storyboard */,
 				B0C0D5B12373296800BAFE0E /* Assets.xcassets */,
 				B0C0D5B32373296800BAFE0E /* LaunchScreen.storyboard */,
+				854FC767237A0EB00037A76C /* scores.json */,
 				B0C0D5B62373296800BAFE0E /* Info.plist */,
+				85A143362375D57B0085B6DF /* Acorn.swift */,
+				854FC765237A0D810037A76C /* ScoreData.swift */,
 			);
 			path = Acorn_Drop;
 			sourceTree = "<group>";
@@ -241,8 +258,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F74CF7237C63AC00AAEA3A /* GameScene.sks in Resources */,
 				B0C0D5B52373296800BAFE0E /* LaunchScreen.storyboard in Resources */,
 				B0C0D5B22373296800BAFE0E /* Assets.xcassets in Resources */,
+				854FC768237A0EB10037A76C /* scores.json in Resources */,
 				B0C0D5B02373296700BAFE0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,9 +289,12 @@
 			files = (
 				B0AB48092375CC3000C8CFAD /* PlayerMovement.swift in Sources */,
 				B0C0D5D923732C8D00BAFE0E /* MainGameViewController.swift in Sources */,
+				85A143372375D57B0085B6DF /* Acorn.swift in Sources */,
+				B0C0D5AD2373296700BAFE0E /* ViewController.swift in Sources */,
 				B0C0D5AD2373296700BAFE0E /* TitleScreenViewController.swift in Sources */,
 				B0C0D5DD23732DEC00BAFE0E /* LeaderboardViewController.swift in Sources */,
 				B0C0D5AB2373296700BAFE0E /* AppDelegate.swift in Sources */,
+				854FC766237A0D810037A76C /* ScoreData.swift in Sources */,
 				B0C0D5DB23732DDE00BAFE0E /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

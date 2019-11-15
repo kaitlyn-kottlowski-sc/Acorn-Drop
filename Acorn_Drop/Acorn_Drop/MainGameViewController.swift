@@ -10,18 +10,22 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+
 class MainGameViewController: UIViewController {
 
+//    var gravity: UIGravityBehavior!
+//    var animator: UIDynamicAnimator!
+//    var acornArray = Array<UIImageView>()
+//    
+//     let screenSize = UIScreen.main.bounds
+//    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        // Do any additional setup after loading the view.
-        if let view = self.view as! SKView?
-        {
+        
+        if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "PlayerMovement")
-            {
-                 //Set the scale mode to scale to fit the window
+            if let scene = SKScene(fileNamed: "GameScene") {
+                // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
                 
                  //Present the scene
@@ -33,6 +37,22 @@ class MainGameViewController: UIViewController {
             view.showsFPS = true
             view.showsNodeCount = true
         }
-        PlayerMovement.spawnPlayer(<#T##PlayerMovement#>)
     }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
+        } else {
+            return .all
+        }
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
 }
