@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SpriteKit
 
-class ViewController: UIViewController
+class ViewController: UIViewController//, SKScene
 {
     
     @IBOutlet weak var startButton: UIButton!
@@ -17,7 +18,6 @@ class ViewController: UIViewController
     
     @IBOutlet weak var settingButton: UIButton!
     
-    //private let buttonWidth = 100
     
     
     public var attribute = 0
@@ -25,10 +25,10 @@ class ViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        startButton.layer.cornerRadius = 4
-        leaderboardButton.layer.cornerRadius = 4
-        settingButton.layer.cornerRadius = 4
-        //startButton.widthAnchor.constraint(equalToConstant: buttonWidth)
+        startButton.layer.cornerRadius = 8
+        leaderboardButton.layer.cornerRadius = 8
+        settingButton.layer.cornerRadius = 8
+        
         
     }
     
@@ -47,6 +47,12 @@ class ViewController: UIViewController
         print("Attribute = \(attribute)")
         // This is a public attribute in viewcontroller A.
         // Its value will be set in viewcontroller B.
+    }
+    
+    func createAcorn(){
+        let acorn = SKSpriteNode(imageNamed: "Squirrel")
+        //acorn.position = CGPoint(x: CGFloat(Int(arc4random()) & Int(size.width)),y:size.height - acorn.size.height)
+        
     }
 
 }
