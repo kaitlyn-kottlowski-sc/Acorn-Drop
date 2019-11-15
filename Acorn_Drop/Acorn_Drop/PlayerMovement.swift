@@ -61,7 +61,6 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         self.addChild(scoreLabel)
     }
     
-    func changetofile()
     @objc func addAcorn()
     {
         possibleFallingObjects = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleFallingObjects) as! [String]
