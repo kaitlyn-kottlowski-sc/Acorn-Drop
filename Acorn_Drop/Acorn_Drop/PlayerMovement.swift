@@ -37,9 +37,20 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     func spawnPlayer()
     {
+        player.name = "squirrel"
         //first line is place holder, replace color with imageNamed: "FileString"
         player = SKSpriteNode(imageNamed: "Squirrel")
-        player.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 520)
+        //player.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 520)
+        player.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        
+        player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
+        player.physicsBody?.isDynamic = false
+        
+        player.physicsBody?.categoryBitMask = squirrelCategory
+        player.physicsBody?.contactTestBitMask = acornCategory
+        player.physicsBody?.collisionBitMask = 0
+        player.physicsBody?.usesPreciseCollisionDetection = true
+        
         self.addChild(player)
     }
     
@@ -48,11 +59,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.text = "Score: \(score)"
         scoreLabel.horizontalAlignmentMode = .left
-        print(self.frame.size.width)
-        print(self.frame.size.height)
         scoreLabel.position = CGPoint(x: self.frame.size.width/2.5 * -1, y: self.frame.size.height/2.3)
-        print(scoreLabel.position.x)
-        print(scoreLabel.position.y)
         scoreLabel.fontName = "AmericanTypewriter-Bold"
         
         scoreLabel.fontSize = 36
@@ -63,13 +70,14 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     @objc func addAcorn()
     {
-        possibleFallingObjects = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleFallingObjects) as! [String]
-        let acorn = SKSpriteNode(imageNamed: possibleFallingObjects[0])
+        let acorn = SKSpriteNode(imageNamed: "acorn")
         
         let randomAcornPosition = GKRandomDistribution(lowestValue: 0, highestValue: 414)
         let position = CGFloat(randomAcornPosition.nextInt())
         
-        acorn.position = CGPoint(x: position, y: self.frame.size.height + acorn.size.height)
+        acorn.name = "acorn"
+        acorn.size = CGSize(width: 50, height: 50)
+        acorn.position = CGPoint(x: position, y: self.frame.size.height - acorn.size.height)
         
         acorn.physicsBody = SKPhysicsBody(rectangleOf: acorn.size)
         acorn.physicsBody?.isDynamic = true
@@ -85,9 +93,42 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         var actionArray = [SKAction]()
         
         actionArray.append(SKAction.move(to: CGPoint(x: position, y: -acorn.size.height), duration: animationDuration))
+        
         actionArray.append(SKAction.removeFromParent())
         
         acorn.run(SKAction.sequence(actionArray))
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact)
+    {
+        var firstBody: SKPhysicsBody
+        var secondBody: SKPhysicsBody
+        
+        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask
+        {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+        }
+        else
+        {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if (firstBody.categoryBitMask & squirrelCategory) != 0 && (secondBody.categoryBitMask & acornCategory) != 0
+        {
+            print("Collide")
+        }
+        else if (firstBody.categoryBitMask & acornCategory) != 0 && (secondBody.categoryBitMask & squirrelCategory) != 0
+        {
+            print("Collide")
+        }
+    }
+    
+    func didPlayerCollideWithAcorn(squirrel :SKSpriteNode, acorn:SKSpriteNode)
+    {
+        acorn.removeFromParent()
+        score += 1
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -100,6 +141,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+        
     }
 
 }
