@@ -18,6 +18,12 @@ class ViewController: UIViewController//, SKScene
     
     @IBOutlet weak var settingButton: UIButton!
     
+    let screenHeight = UIScreen.main.bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    let divider = 1.3333
+    let buffer = 10
+    
+    
     
     
     public var attribute = 0
