@@ -49,11 +49,6 @@ class ViewController: UIViewController//, SKScene
         // Its value will be set in viewcontroller B.
     }
     
-    func createAcorn(){
-        let acorn = SKSpriteNode(imageNamed: "Squirrel")
-        //acorn.position = CGPoint(x: CGFloat(Int(arc4random()) & Int(size.width)),y:size.height - acorn.size.height)
-        
-    }
 
 }
 
