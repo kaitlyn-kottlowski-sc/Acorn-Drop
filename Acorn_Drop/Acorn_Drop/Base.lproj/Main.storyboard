@@ -53,8 +53,8 @@
                                     <segue destination="Mp3-NZ-dND" kind="show" id="zU6-e4-UsU"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Squirrel" translatesAutoresizingMaskIntoConstraints="NO" id="cf0-4x-xoj">
-                                <rect key="frame" x="62" y="171" width="313" height="169"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="cf0-4x-xoj">
+                                <rect key="frame" x="30" y="184" width="354" height="130"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -63,18 +63,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Psm-Az-Ivh" secondAttribute="trailing" constant="10" id="71W-cK-UOy"/>
                             <constraint firstItem="cXY-dQ-Xea" firstAttribute="top" secondItem="ihH-dm-Wxw" secondAttribute="bottom" constant="104" id="76b-jW-QlY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cXY-dQ-Xea" secondAttribute="trailing" constant="152" id="99d-2B-pXF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cf0-4x-xoj" secondAttribute="trailing" constant="39" id="BhI-du-ivk"/>
                             <constraint firstItem="cXY-dQ-Xea" firstAttribute="top" secondItem="ihH-dm-Wxw" secondAttribute="bottom" constant="104" id="DBm-WD-pI7"/>
                             <constraint firstItem="cXY-dQ-Xea" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="Hd0-jW-ZaN"/>
                             <constraint firstItem="Psm-Az-Ivh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="HgT-d2-U8g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cf0-4x-xoj" secondAttribute="trailing" constant="30" id="MEy-7Y-kPe"/>
                             <constraint firstItem="ihH-dm-Wxw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="389" id="MFO-mZ-D1J"/>
-                            <constraint firstItem="ihH-dm-Wxw" firstAttribute="top" secondItem="cf0-4x-xoj" secondAttribute="bottom" constant="93" id="ZG7-DD-tHn"/>
+                            <constraint firstItem="ihH-dm-Wxw" firstAttribute="top" secondItem="cf0-4x-xoj" secondAttribute="bottom" constant="119" id="MsF-UF-E9m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ihH-dm-Wxw" secondAttribute="trailing" constant="152" id="ZuR-ly-gz1"/>
-                            <constraint firstItem="cf0-4x-xoj" firstAttribute="top" secondItem="Psm-Az-Ivh" secondAttribute="bottom" constant="64" id="eb2-aK-0h1"/>
+                            <constraint firstItem="cf0-4x-xoj" firstAttribute="top" secondItem="Psm-Az-Ivh" secondAttribute="bottom" constant="77" id="bV0-Y7-Lig"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Psm-Az-Ivh" secondAttribute="bottom" constant="755" id="fck-Aq-Okj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cXY-dQ-Xea" secondAttribute="bottom" constant="265" id="jFf-wb-NQ7"/>
+                            <constraint firstItem="cf0-4x-xoj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="mnP-cH-thL"/>
                             <constraint firstItem="Psm-Az-Ivh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="295" id="qcS-R9-xye"/>
-                            <constraint firstItem="cf0-4x-xoj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="wDm-Ae-le5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -94,7 +94,7 @@
             <objects>
                 <viewController id="Mp3-NZ-dND" customClass="SettingsViewController" customModule="Acorn_Drop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="A1x-Mn-MxR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbG-HV-iP0">
@@ -127,7 +127,7 @@
             <objects>
                 <viewController id="BHf-dU-zGW" customClass="LeaderboardViewController" customModule="Acorn_Drop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ex8-hF-Rb5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LeaderBoard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HU-li-ja3">
@@ -150,7 +150,6 @@
         <scene sceneID="kYz-Q0-i0Y">
             <objects>
                 <viewController id="xwk-Kg-fEg" customClass="MainGameViewController" customModule="Acorn_Drop" customModuleProvider="target" sceneMemberID="viewController">
-
                     <view key="view" contentMode="scaleToFill" id="WBk-P8-TSc" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,6 +163,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Squirrel" width="100" height="110"/>
+        <image name="title" width="354" height="130"/>
     </resources>
 </document>
