@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6DC6C02385A25100101DE5 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DC6BF2385A25100101DE5 /* TitleScene.swift */; };
+		3A6DC6C32385A4C900101DE5 /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3A6DC6C22385A4C900101DE5 /* TitleScene.sks */; };
 		3A9CDB0B2383740200738E63 /* TitleScreenAcorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CDB0A2383740200738E63 /* TitleScreenAcorn.swift */; };
 		3A9CDB0D238378F400738E63 /* Sides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CDB0C238378F400738E63 /* Sides.swift */; };
 		854FC766237A0D810037A76C /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 854FC765237A0D810037A76C /* ScoreData.swift */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A6DC6BF2385A25100101DE5 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
+		3A6DC6C22385A4C900101DE5 /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 		3A9CDB0A2383740200738E63 /* TitleScreenAcorn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenAcorn.swift; sourceTree = "<group>"; };
 		3A9CDB0C238378F400738E63 /* Sides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sides.swift; sourceTree = "<group>"; };
 		854FC765237A0D810037A76C /* ScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			children = (
 				B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */,
 				B0C0D5AC2373296700BAFE0E /* TitleScreenViewController.swift */,
+				3A6DC6BF2385A25100101DE5 /* TitleScene.swift */,
+				3A6DC6C22385A4C900101DE5 /* TitleScene.sks */,
 				B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */,
 				B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */,
 				B0F74CF6237C63AC00AAEA3A /* GameScene.sks */,
@@ -264,6 +270,7 @@
 				B0C0D5B22373296800BAFE0E /* Assets.xcassets in Resources */,
 				854FC768237A0EB10037A76C /* scores.json in Resources */,
 				B0C0D5B02373296700BAFE0E /* Main.storyboard in Resources */,
+				3A6DC6C32385A4C900101DE5 /* TitleScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +306,7 @@
 				B0C0D5AB2373296700BAFE0E /* AppDelegate.swift in Sources */,
 				854FC766237A0D810037A76C /* ScoreData.swift in Sources */,
 				B0C0D5DB23732DDE00BAFE0E /* SettingsViewController.swift in Sources */,
+				3A6DC6C02385A25100101DE5 /* TitleScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

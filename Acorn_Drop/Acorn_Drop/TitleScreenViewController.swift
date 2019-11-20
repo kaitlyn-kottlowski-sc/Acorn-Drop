@@ -8,8 +8,9 @@
 
 import UIKit
 import SpriteKit
+import GameplayKit
 
-class ViewController: UIViewController//, SKScene
+class ViewController: UIViewController
 {
     
     @IBOutlet weak var startButton: UIButton!
@@ -17,6 +18,8 @@ class ViewController: UIViewController//, SKScene
     @IBOutlet weak var leaderboardButton: UIButton!
     
     @IBOutlet weak var settingButton: UIButton!
+    
+    let roundedness = 8
     
     let screenHeight = UIScreen.main.bounds.height
     let screenWidth = UIScreen.main.bounds.width
@@ -30,10 +33,26 @@ class ViewController: UIViewController//, SKScene
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        startButton.layer.cornerRadius = 8
-        leaderboardButton.layer.cornerRadius = 8
-        settingButton.layer.cornerRadius = 8
+        
+        // create rounded buttons
+        startButton.layer.cornerRadius = CGFloat(roundedness)
+        leaderboardButton.layer.cornerRadius = CGFloat(roundedness)
+        settingButton.layer.cornerRadius = CGFloat(roundedness)
+        
+        //Load the SKScene from 'TitleScene.sks'
+        if let view = self.view as! SKView? {
+            if let scene = SKScene(fileNamed: "TitleScene"){
+                scene.scaleMode = .aspectFill
+                
+                view.presentScene(scene)
+            }
+            
+            view.ignoresSiblingOrder = true
+            
+            view.showsFPS = true
+            view.showsNodeCount = true
+            view.showsPhysics = true
+        }
         
         
     }
