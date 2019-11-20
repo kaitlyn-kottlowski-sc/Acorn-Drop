@@ -18,6 +18,12 @@ class ViewController: UIViewController//, SKScene
     
     @IBOutlet weak var settingButton: UIButton!
     
+    let screenHeight = UIScreen.main.bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    let divider = 1.3333
+    let buffer = 10
+    
+    
     
     
     public var attribute = 0
@@ -49,11 +55,6 @@ class ViewController: UIViewController//, SKScene
         // Its value will be set in viewcontroller B.
     }
     
-    func createAcorn(){
-        let acorn = SKSpriteNode(imageNamed: "Squirrel")
-        //acorn.position = CGPoint(x: CGFloat(Int(arc4random()) & Int(size.width)),y:size.height - acorn.size.height)
-        
-    }
 
 }
 
