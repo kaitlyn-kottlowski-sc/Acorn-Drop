@@ -17,8 +17,18 @@ class TitleScreenAcorn: SKNode{
         let randomNumber = arc4random_uniform(2)
         let random: CGFloat = randomNumber == 0 ? 1 : -1
         
+        //add buffer to starting x coordinate
+        let buffer = 10
+        var xStart = CGFloat(arc4random_uniform(UInt32(UIScreen.main.bounds.width)))
+        
+        if random > 0{
+            xStart = xStart - CGFloat(buffer)
+        } else{
+            xStart = xStart * random + CGFloat(buffer)
+        }
+    
         //sets starting location at a random x location above the screen
-        self.position = CGPoint(x: (CGFloat(arc4random_uniform(UInt32(UIScreen.main.bounds.width)))*random), y: UIScreen.main.bounds.height)
+        self.position = CGPoint(x: xStart, y: UIScreen.main.bounds.height)
         
         //set size of image
         self.setScale(1)
