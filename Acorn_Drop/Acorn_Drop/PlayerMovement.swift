@@ -25,7 +25,9 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     let acornCategory:UInt32 = 0x1 << 1
     let squirrelCategory:UInt32 = 0x1 << 0
     
-    override func didMove(to view: SKView) {
+    override func didMove(to view: SKView)
+    {
+        physicsWorld.contactDelegate = self
         // set background
         // background = SKEmitterNode(fileNamed:"")
         self.backgroundColor = backgroundColorCustom
@@ -37,9 +39,9 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     func spawnPlayer()
     {
-        player.name = "squirrel"
         //first line is place holder, replace color with imageNamed: "FileString"
         player = SKSpriteNode(imageNamed: "Squirrel")
+        player.name = "squirrel"
         //player.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 520)
         player.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         
@@ -70,25 +72,26 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     @objc func addAcorn()
     {
-        let acorn = SKSpriteNode(imageNamed: "acorn")
+        let acorn = SKSpriteNode(imageNamed: "acorn-1")
         
-        let randomAcornPosition = GKRandomDistribution(lowestValue: 0, highestValue: 414)
+        let randomAcornPosition = GKRandomDistribution(lowestValue: -414, highestValue: 414)
         let position = CGFloat(randomAcornPosition.nextInt())
         
         acorn.name = "acorn"
         acorn.size = CGSize(width: 50, height: 50)
         acorn.position = CGPoint(x: position, y: self.frame.size.height - acorn.size.height)
         
-        acorn.physicsBody = SKPhysicsBody(rectangleOf: acorn.size)
+        acorn.physicsBody = SKPhysicsBody(circleOfRadius: acorn.size.width/2)
         acorn.physicsBody?.isDynamic = true
         
-        acorn.physicsBody?.categoryBitMask = acornCategory
-        acorn.physicsBody?.contactTestBitMask = squirrelCategory
-        acorn.physicsBody?.collisionBitMask = 0
+        acorn.physicsBody!.contactTestBitMask = acorn.physicsBody!.collisionBitMask
+        //acorn.physicsBody?.categoryBitMask = acornCategory
+        //acorn.physicsBody?.contactTestBitMask = squirrelCategory
+        //acorn.physicsBody?.collisionBitMask = 0
         
         self.addChild(acorn)
         
-        let animationDuration:TimeInterval = 6
+        let animationDuration:TimeInterval = 10
         
         var actionArray = [SKAction]()
         
@@ -99,36 +102,36 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         acorn.run(SKAction.sequence(actionArray))
     }
     
-    func didBegin(_ contact: SKPhysicsContact)
+    func collisionBetween(acorn: SKNode, object: SKNode)
     {
-        var firstBody: SKPhysicsBody
-        var secondBody: SKPhysicsBody
-        
-        if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask
+        if object.name == "squirrel"
         {
-            firstBody = contact.bodyA
-            secondBody = contact.bodyB
+            destroy(acorn : acorn)
         }
-        else
+        else if (object.name == "acorn")
         {
-            firstBody = contact.bodyB
-            secondBody = contact.bodyA
-        }
-        
-        if (firstBody.categoryBitMask & squirrelCategory) != 0 && (secondBody.categoryBitMask & acornCategory) != 0
-        {
-            print("Collide")
-        }
-        else if (firstBody.categoryBitMask & acornCategory) != 0 && (secondBody.categoryBitMask & squirrelCategory) != 0
-        {
-            print("Collide")
+            destroy(acorn : acorn)
         }
     }
     
-    func didPlayerCollideWithAcorn(squirrel :SKSpriteNode, acorn:SKSpriteNode)
+    func destroy(acorn: SKNode)
     {
         acorn.removeFromParent()
-        score += 1
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact)
+    {
+        guard let nodeA = contact.bodyA.node else { return }
+        guard let nodeB = contact.bodyB.node else { return }
+        
+        if nodeA.name == "acorn"
+        {
+            collisionBetween(acorn: nodeA, object: nodeB)
+        }
+        else if nodeB.name == "squirrel"
+        {
+            collisionBetween(acorn: nodeB, object: nodeA)
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
