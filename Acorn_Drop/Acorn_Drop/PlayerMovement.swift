@@ -48,9 +48,10 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
         player.physicsBody?.isDynamic = false
         
+        //player.physicsBody!.contactTestBitMask = player.physicsBody!.collisionBitMask
         player.physicsBody?.categoryBitMask = squirrelCategory
         player.physicsBody?.contactTestBitMask = acornCategory
-        player.physicsBody?.collisionBitMask = 0
+        player.physicsBody?.collisionBitMask = 1
         player.physicsBody?.usesPreciseCollisionDetection = true
         
         self.addChild(player)
@@ -84,10 +85,10 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         acorn.physicsBody = SKPhysicsBody(circleOfRadius: acorn.size.width/2)
         acorn.physicsBody?.isDynamic = true
         
-        acorn.physicsBody!.contactTestBitMask = acorn.physicsBody!.collisionBitMask
-        //acorn.physicsBody?.categoryBitMask = acornCategory
-        //acorn.physicsBody?.contactTestBitMask = squirrelCategory
-        //acorn.physicsBody?.collisionBitMask = 0
+        //acorn.physicsBody!.contactTestBitMask = acorn.physicsBody!.collisionBitMask
+        acorn.physicsBody?.categoryBitMask = acornCategory
+        acorn.physicsBody?.contactTestBitMask = squirrelCategory
+        acorn.physicsBody?.collisionBitMask = 1
         
         self.addChild(acorn)
         
@@ -121,16 +122,17 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     func didBegin(_ contact: SKPhysicsContact)
     {
-        guard let nodeA = contact.bodyA.node else { return }
-        guard let nodeB = contact.bodyB.node else { return }
-        
-        if nodeA.name == "acorn"
+        var bodyA = SKPhysicsBody()
+        var bodyB = SKPhysicsBody()
+        if(contact.bodyA.node?.name == "squirrel")
         {
-            collisionBetween(acorn: nodeA, object: nodeB)
+            squirrel = contact.bodyA
+            acorn = contact.bodyB
         }
-        else if nodeB.name == "squirrel"
+        else
         {
-            collisionBetween(acorn: nodeB, object: nodeA)
+            acorn = contact.bodyB
+            squirrel = contact.bodyA
         }
     }
     
