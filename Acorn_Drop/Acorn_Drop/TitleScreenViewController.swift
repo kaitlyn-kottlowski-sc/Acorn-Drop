@@ -19,17 +19,31 @@ class ViewController: UIViewController
     
     @IBOutlet weak var settingButton: UIButton!
     
-    let roundedness = 8
+    
+    
+    private let roundedness = 8
     
     public var attribute = 0
+    
+    private var orange = UIColor(red: 255/255, green: 127/255, blue: 38/255, alpha: 1)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let buttonArray = [startButton, leaderboardButton, settingButton]
+        
+        //create rounded buttons and add correct button color
+        for button in buttonArray{
+            button?.layer.cornerRadius = CGFloat(roundedness)
+            button?.backgroundColor = orange
+        }
         // create rounded buttons
-        startButton.layer.cornerRadius = CGFloat(roundedness)
-        leaderboardButton.layer.cornerRadius = CGFloat(roundedness)
-        settingButton.layer.cornerRadius = CGFloat(roundedness)
+        //startButton.layer.cornerRadius = CGFloat(roundedness)
+        //leaderboardButton.layer.cornerRadius = CGFloat(roundedness)
+        //settingButton.layer.cornerRadius = CGFloat(roundedness)
+        //startButton.backgroundColor = orange
+        //leaderboardButton.backgroundColor = orange
+        //settingButton.backgroundColor = orange
         
         //Load the SKScene from 'TitleScene.sks'
         if let view = self.view as! SKView? {

@@ -14,13 +14,15 @@ class TitleScene: SKScene{
     //Timer delay for acorn spawn
     var acornTimer = 10
     //controls how many acorns are placed on screen
-    var accornCount = 150
+    var accornCount = 45
     
     //used for creating bowl
     let screenHeight = UIScreen.main.bounds.height
     let screenWidth = UIScreen.main.bounds.width
     let divider = CGFloat(1.3333)
     let buffer = CGFloat(10)
+    
+    let testAcorn = TitleScreenAcorn(image: SKSpriteNode(imageNamed: "acorn-1"))
     
     override func didMove(to view: SKView){
         let floor = Side(xLocation: 0, yLocation: -screenHeight/divider, width: screenWidth * 2, height: buffer)
@@ -30,6 +32,16 @@ class TitleScene: SKScene{
         self.addChild(floor)
         self.addChild(leftWall)
         self.addChild(rightWall)
+        
+        self.addChild(testAcorn)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.testAcorn.move(touchLocation: (touches.first?.location(in: self))!)
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.testAcorn.move(touchLocation: (touches.first?.location(in: self))!)
     }
     
     override func update(_ currentTime: TimeInterval) {
