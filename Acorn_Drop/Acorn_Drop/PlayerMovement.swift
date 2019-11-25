@@ -11,6 +11,7 @@ import GameplayKit
 
 class PlayerMovement: SKScene, SKPhysicsContactDelegate
 {
+    var contactQueue = [SKPhysicsContact]()
     //var backgroundPicture: SKEmitterNode
     var player : SKSpriteNode!
     var playerColor = UIColor.blue
@@ -48,7 +49,6 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
         player.physicsBody?.isDynamic = false
         
-        //player.physicsBody!.contactTestBitMask = player.physicsBody!.collisionBitMask
         player.physicsBody?.categoryBitMask = squirrelCategory
         player.physicsBody?.contactTestBitMask = acornCategory
         player.physicsBody?.collisionBitMask = 1
@@ -68,7 +68,18 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         scoreLabel.fontSize = 36
         scoreLabel.fontColor = UIColor.white
         score = 0
+        scoreLabel.name = "score"
         self.addChild(scoreLabel)
+    }
+    
+    func adjustScore(by points: Int)
+    {
+        score += points
+        if let score = childNode(withName: "score") as? SKLabelNode
+        {
+            print("score \(score)")
+            score.text = String(format: "Score: %01u", self.score)
+        }
     }
     
     @objc func addAcorn()
@@ -85,20 +96,19 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         acorn.physicsBody = SKPhysicsBody(circleOfRadius: acorn.size.width/2)
         acorn.physicsBody?.isDynamic = true
         
-        //acorn.physicsBody!.contactTestBitMask = acorn.physicsBody!.collisionBitMask
         acorn.physicsBody?.categoryBitMask = acornCategory
         acorn.physicsBody?.contactTestBitMask = squirrelCategory
         acorn.physicsBody?.collisionBitMask = 1
         
         self.addChild(acorn)
         
-        let animationDuration:TimeInterval = 10
+        let animationDuration:TimeInterval = 6
         
         var actionArray = [SKAction]()
         
         actionArray.append(SKAction.move(to: CGPoint(x: position, y: -acorn.size.height), duration: animationDuration))
         
-        actionArray.append(SKAction.removeFromParent())
+        //actionArray.append(SKAction.removeFromParent())
         
         acorn.run(SKAction.sequence(actionArray))
     }
@@ -122,18 +132,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     func didBegin(_ contact: SKPhysicsContact)
     {
-        var bodyA = SKPhysicsBody()
-        var bodyB = SKPhysicsBody()
-        if(contact.bodyA.node?.name == "squirrel")
-        {
-            squirrel = contact.bodyA
-            acorn = contact.bodyB
-        }
-        else
-        {
-            acorn = contact.bodyB
-            squirrel = contact.bodyA
-        }
+        contactQueue.append(contact)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -144,9 +143,42 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         }
     }
     
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+    func handle(_ contact: SKPhysicsContact)
+    {
+        if contact.bodyA.node?.parent == nil || contact.bodyB.node?.parent == nil
+        {
+            return
+        }
         
+        let nodeNames = [contact.bodyA.node!.name!, contact.bodyB.node!.name!]
+        
+        if nodeNames.contains("acorn") && nodeNames.contains("squirrel")
+        {
+            adjustScore(by: 1)
+            contact.bodyB.node!.removeFromParent()
+        }
+        else if nodeNames.contains("acorn") && nodeNames.contains("ground")
+        {
+            contact.bodyB.node!.removeFromParent()
+        }
+    }
+    
+    override func update(_ currentTime: TimeInterval)
+    {
+        processContacts(forUpdate: currentTime)
+    }
+    
+    func processContacts(forUpdate currentTime: CFTimeInterval)
+    {
+        for contact in contactQueue
+        {
+            handle(contact)
+            
+            if let index = contactQueue.firstIndex(of: contact)
+            {
+                contactQueue.remove(at: index)
+            }
+        }
     }
 
 }
