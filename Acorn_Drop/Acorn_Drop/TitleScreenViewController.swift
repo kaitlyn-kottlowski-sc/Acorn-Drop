@@ -31,6 +31,9 @@ class ViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // start background music
+        MusicPlayer.startBackgroundMusic()
+        
         // create rounded buttons
         startButton.layer.cornerRadius = CGFloat(roundedness)
         leaderboardButton.layer.cornerRadius = CGFloat(roundedness)
@@ -50,6 +53,7 @@ class ViewController: UIViewController
             view.showsNodeCount = true
             view.showsPhysics = true
         }
+                
     }
     
     override func prepare(for segue: UIStoryboardSegue,                                 sender: Any?)
@@ -67,7 +71,6 @@ class ViewController: UIViewController
         // This is a public attribute in viewcontroller A.
         // Its value will be set in viewcontroller B.
     }
-    
 
 }
 
