@@ -21,14 +21,6 @@ class ViewController: UIViewController
     
     let roundedness = 8
     
-    let screenHeight = UIScreen.main.bounds.height
-    let screenWidth = UIScreen.main.bounds.width
-    let divider = 1.3333
-    let buffer = 10
-    
-    
-    
-    
     public var attribute = 0
 
     override func viewDidLoad() {
@@ -53,8 +45,7 @@ class ViewController: UIViewController
             view.showsNodeCount = true
             view.showsPhysics = true
         }
-        
-        
+                
     }
     
     
@@ -73,7 +64,6 @@ class ViewController: UIViewController
         // This is a public attribute in viewcontroller A.
         // Its value will be set in viewcontroller B.
     }
-    
 
 }
 
