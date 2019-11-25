@@ -26,9 +26,6 @@ class ViewController: UIViewController
     let divider = 1.3333
     let buffer = 10
     
-    
-    
-    
     public var attribute = 0
 
     override func viewDidLoad() {
