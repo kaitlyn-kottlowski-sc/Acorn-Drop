@@ -26,6 +26,9 @@ class ViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // start background music
+        MusicPlayer.startBackgroundMusic()
+        
         // create rounded buttons
         startButton.layer.cornerRadius = CGFloat(roundedness)
         leaderboardButton.layer.cornerRadius = CGFloat(roundedness)

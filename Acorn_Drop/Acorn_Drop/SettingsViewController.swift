@@ -12,6 +12,7 @@ class SettingsViewController: UIViewController
 {
     public var someAttribute = 0
 
+   
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -24,6 +25,16 @@ class SettingsViewController: UIViewController
     {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func enableBackgroundMusic(_ sender: UISwitch) {
+           
+           if sender.isOn {
+               MusicPlayer.playBackgroundMusic()
+           }
+           else {
+               MusicPlayer.stopBackgroundMusic()
+           }
+       }
     
     override func prepare(for segue: UIStoryboardSegue,
                           sender: Any?)
