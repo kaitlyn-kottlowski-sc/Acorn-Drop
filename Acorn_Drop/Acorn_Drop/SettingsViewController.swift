@@ -8,15 +8,25 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController
+class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
-    public var someAttribute = 0
-
    
+    public var someAttribute = 0
+     var squirrelCostumes = ["Default", "Poncho", "Cat", "Football Player", "Hotdog"]
+    public var playerType: String?
+
+    @IBOutlet weak var chooseSquirrel: UIPickerView!
+    @IBOutlet weak var chosenSquirrelImage: UIImageView!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         print("Some attribute =  \(someAttribute)")
+        
+        self.chooseSquirrel.dataSource = self
+        self.chooseSquirrel.delegate = self
+        
+        chooseSquirrel.selectRow(Player.getType(), inComponent: 0, animated: true)
 
         // Do any additional setup after loading the view.
     }
@@ -46,15 +56,47 @@ class SettingsViewController: UIViewController
         }
     }
     
+    // Functions for squirrell picker
+      func numberOfComponents(in pickerView: UIPickerView) -> Int {
+             return 1
+         }
 
-    /*
-    // MARK: - Navigation
+      func pickerView(_ pickerView: UIPickerView,
+          numberOfRowsInComponent component: Int) -> Int {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+              // Row count: rows equals array length.
+              return squirrelCostumes.count
+      }
+    
+      func pickerView(_ pickerView: UIPickerView,
+          titleForRow row: Int,
+          forComponent component: Int) -> String? {
+
+        
+              // Return a string from the array for this row.
+        
+                let squirrelType = squirrelCostumes[row]
+        
+              if squirrelType == "Football Player" {
+                    playerType = "football_squirrel"
+                }
+                else if squirrelType == "Poncho" {
+                    playerType = "poncho_squirrel"
+                }
+                else if squirrelType == "Hotdog" {
+                    playerType = "hotdog_squirrel"
+                }
+                else if squirrelType == "Cat" {
+                    playerType = "cat_squirrel"
+                }
+                else if squirrelType == "Default"{
+                    playerType = "Squirrel"
+                }
+        
+                chosenSquirrelImage.image = UIImage(named: playerType!)
+                Player.setSquirrelName(i: playerType!)
+                Player.setType(t: row)
+              return squirrelCostumes[row]
+      }
 
 }
