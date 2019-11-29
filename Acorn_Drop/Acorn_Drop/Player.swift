@@ -13,6 +13,17 @@ class Player {
     
     static var type: Int = 0
     static var squirrelName: String = "Squirrel"
+    static var squirrelBackground: String = "squirrel_background"
+    
+    static func setSquirrelBackground(b: String)
+    {
+        squirrelBackground = b
+    }
+    
+    static func getSquirrelBackground() -> String
+    {
+        return squirrelBackground
+    }
     
     static func setSquirrelName(i: String)
     {

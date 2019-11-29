@@ -32,7 +32,15 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         physicsWorld.contactDelegate = self
         // set background
         // background = SKEmitterNode(fileNamed:"")
-        self.backgroundColor = backgroundColorCustom
+//        self.backgroundColor = backgroundColorCustom
+
+        let background = SKSpriteNode(imageNamed: Player.getSquirrelBackground())
+   
+        background.position = CGPoint(x: 0, y: 0)
+        background.size = CGSize(width: frame.width, height: frame.height)
+        addChild(background)
+    
+        
         spawnPlayer()
         spawnScoreLabel()
         
@@ -41,13 +49,14 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     func spawnPlayer()
     {
+        
         //first line is place holder, replace color with imageNamed: "FileString"
         player = SKSpriteNode(imageNamed: Player.getSquirrelName())
         
         player.name = "squirrel"
         //player.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 520)
         player.size = CGSize(width: CGFloat(screenSize.width/3), height: CGFloat(screenSize.height/5))
-        player.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        player.position = CGPoint(x: self.frame.midX, y: self.frame.midY-200)
         
         player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
         player.physicsBody?.isDynamic = false
@@ -62,11 +71,13 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     func spawnScoreLabel()
     {
+        
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.text = "Score: \(score)"
         scoreLabel.horizontalAlignmentMode = .left
         scoreLabel.position = CGPoint(x: self.frame.size.width/2.5 * -1, y: self.frame.size.height/2.3)
         scoreLabel.fontName = "AmericanTypewriter-Bold"
+        
         
         scoreLabel.fontSize = 36
         scoreLabel.fontColor = UIColor.white

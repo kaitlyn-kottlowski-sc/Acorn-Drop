@@ -12,11 +12,15 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 {
    
     public var someAttribute = 0
-     var squirrelCostumes = ["Default", "Poncho", "Cat", "Football Player", "Hotdog"]
-    public var playerType: String?
+    private var squirrelCostumes = ["Default", "Poncho", "Cat", "Football Player", "Hotdog", "Icecream Cone", "Astronaut"]
+    private var squirrelPlayerTypes = ["Squirrel", "poncho_squirrel","cat_squirrel","football_squirrel","hotdog_squirrel","icecream_squirrel", "astronaut_squirrel"]
+    private var squirrelBackgrounds = ["squirrel_background", "poncho_background", "cat_background", "football_background", "hotdog_background", "icecream_background", "astronaut_background"]
+    private var playerType: String = "Squirrel"
+    private var playerBackground: String? = "Squirrel"
 
     @IBOutlet weak var chooseSquirrel: UIPickerView!
     @IBOutlet weak var chosenSquirrelImage: UIImageView!
+
     
     override func viewDidLoad()
     {
@@ -25,10 +29,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         self.chooseSquirrel.dataSource = self
         self.chooseSquirrel.delegate = self
-        
         chooseSquirrel.selectRow(Player.getType(), inComponent: 0, animated: true)
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func goBackToTitle(_ sender: Any)
@@ -36,15 +37,17 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func enableBackgroundMusic(_ sender: UISwitch) {
-           
-           if sender.isOn {
-               MusicPlayer.playBackgroundMusic()
-           }
-           else {
-               MusicPlayer.stopBackgroundMusic()
-           }
+    @IBAction func enableBackgroundMusic(_ sender: UISwitch)
+    {
+       if sender.isOn
+       {
+           MusicPlayer.playBackgroundMusic()
        }
+       else
+       {
+           MusicPlayer.stopBackgroundMusic()
+       }
+    }
     
     override func prepare(for segue: UIStoryboardSegue,
                           sender: Any?)
@@ -63,7 +66,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
       func pickerView(_ pickerView: UIPickerView,
           numberOfRowsInComponent component: Int) -> Int {
-
               // Row count: rows equals array length.
               return squirrelCostumes.count
       }
@@ -71,32 +73,18 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
       func pickerView(_ pickerView: UIPickerView,
           titleForRow row: Int,
           forComponent component: Int) -> String? {
-
-        
-              // Return a string from the array for this row.
-        
-                let squirrelType = squirrelCostumes[row]
-        
-              if squirrelType == "Football Player" {
-                    playerType = "football_squirrel"
-                }
-                else if squirrelType == "Poncho" {
-                    playerType = "poncho_squirrel"
-                }
-                else if squirrelType == "Hotdog" {
-                    playerType = "hotdog_squirrel"
-                }
-                else if squirrelType == "Cat" {
-                    playerType = "cat_squirrel"
-                }
-                else if squirrelType == "Default"{
-                    playerType = "Squirrel"
-                }
-        
-                chosenSquirrelImage.image = UIImage(named: playerType!)
-                Player.setSquirrelName(i: playerType!)
-                Player.setType(t: row)
               return squirrelCostumes[row]
       }
-
+    
+    // Capture the picker view selection
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+           
+         playerType = squirrelPlayerTypes[row]
+             playerBackground = squirrelBackgrounds[row]
+        
+      chosenSquirrelImage.image = UIImage(named: playerType)
+       Player.setSquirrelName(i: playerType)
+      Player.setSquirrelBackground(b: playerBackground!)
+       Player.setType(t: row)
+   }
 }
