@@ -12,7 +12,9 @@ import GameplayKit
 class TitleScene: SKScene{
     
     //Timer delay for acorn spawn
-    var acornTimer = 10
+    let acornReset = 30
+    
+    var acornTimer = 0
     //controls how many acorns are placed on screen
     var accornCount = 45
     
@@ -24,7 +26,6 @@ class TitleScene: SKScene{
     
     var acornArray: [TitleScreenAcorn] = []
     
-    let testAcorn = TitleScreenAcorn(image: SKSpriteNode(imageNamed: "acorn-1"))
     
     override func didMove(to view: SKView){
         let floor = Side(xLocation: 0, yLocation: -screenHeight/divider, width: screenWidth * 2, height: buffer)
@@ -34,8 +35,6 @@ class TitleScene: SKScene{
         self.addChild(floor)
         self.addChild(leftWall)
         self.addChild(rightWall)
-        
-        self.addChild(testAcorn)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -56,7 +55,7 @@ class TitleScene: SKScene{
                 acornTimer = acornTimer - 1
             } else {
                 spawnAcorns()
-                acornTimer = 10
+                acornTimer = acornReset
                 accornCount = accornCount - 1
             }
         }
