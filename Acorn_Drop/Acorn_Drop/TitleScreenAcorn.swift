@@ -18,7 +18,7 @@ class TitleScreenAcorn: SKNode{
         let random: CGFloat = randomNumber == 0 ? 1 : -1
         
         //add buffer to starting x coordinate
-        let buffer = 10
+        let buffer = 100
         var xStart = CGFloat(arc4random_uniform(UInt32(UIScreen.main.bounds.width)))
         
         if random > 0{
@@ -43,5 +43,12 @@ class TitleScreenAcorn: SKNode{
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemeted")
+    }
+    
+    func move(touchLocation: CGPoint){
+        if self.calculateAccumulatedFrame().contains(touchLocation){
+            self.position.x = touchLocation.x
+            self.position.y = touchLocation.y
+        }
     }
 }
