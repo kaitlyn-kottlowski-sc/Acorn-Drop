@@ -22,6 +22,8 @@ class TitleScene: SKScene{
     let divider = CGFloat(1.3333)
     let buffer = CGFloat(10)
     
+    var acornArray: [TitleScreenAcorn] = []
+    
     let testAcorn = TitleScreenAcorn(image: SKSpriteNode(imageNamed: "acorn-1"))
     
     override func didMove(to view: SKView){
@@ -37,11 +39,15 @@ class TitleScene: SKScene{
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.testAcorn.move(touchLocation: (touches.first?.location(in: self))!)
+        for acorn in acornArray{
+            acorn.move(touchLocation: (touches.first?.location(in: self))!)
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.testAcorn.move(touchLocation: (touches.first?.location(in: self))!)
+        for acorn in acornArray{
+            acorn.move(touchLocation: (touches.first?.location(in: self))!)
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -59,5 +65,7 @@ class TitleScene: SKScene{
     func spawnAcorns(){
         let acorn = TitleScreenAcorn(image: SKSpriteNode(imageNamed: "acorn-1"))
         self.addChild(acorn)
+        
+        acornArray.append(acorn)
     }
 }
