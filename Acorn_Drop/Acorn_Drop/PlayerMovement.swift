@@ -11,9 +11,9 @@ import GameplayKit
 
 class PlayerMovement: SKScene, SKPhysicsContactDelegate
 {
+    //static var sharedInstance = PlayerMovement()
     var screenSize = UIScreen.main.bounds
     var contactQueue = [SKPhysicsContact]()
-    //var backgroundPicture: SKEmitterNode
     var player : SKSpriteNode!
     var playerColor = UIColor.blue
     var backgroundColorCustom = UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)
@@ -24,32 +24,39 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     var gameTimer:Timer!
     var possibleFallingObjects = ["acorn"]
     
+    var livesLabel: SKLabelNode!
+    var lives = 3
+    
+    var acornspawning : Bool! = false
+    
     let acornCategory:UInt32 = 0x1 << 1
     let squirrelCategory:UInt32 = 0x1 << 0
     
     override func didMove(to view: SKView)
     {
+        //PlayerMovement.sharedInstance = self
         physicsWorld.contactDelegate = self
-        // set background
-        // background = SKEmitterNode(fileNamed:"")
-//        self.backgroundColor = backgroundColorCustom
-
+        
+        inputBackground()
+        spawnPlayer()
+        spawnScoreLabel()
+        spawnLives()
+        
+        //May need this as its a timer before the acorns start to fall
+        //gameTimer = Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(addAcorn), userInfo: nil, repeats: true)
+    }
+    
+    func inputBackground()
+    {
         let background = SKSpriteNode(imageNamed: Player.getSquirrelBackground())
-   
+        
         background.position = CGPoint(x: 0, y: 0)
         background.size = CGSize(width: frame.width, height: frame.height)
         addChild(background)
-    
-        
-        spawnPlayer()
-        spawnScoreLabel()
-        
-        gameTimer = Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(addAcorn), userInfo: nil, repeats: true)
     }
     
     func spawnPlayer()
     {
-        
         //first line is place holder, replace color with imageNamed: "FileString"
         player = SKSpriteNode(imageNamed: Player.getSquirrelName())
         
@@ -71,13 +78,11 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     func spawnScoreLabel()
     {
-        
         scoreLabel = SKLabelNode(fontNamed: "Chalkduster")
         scoreLabel.text = "Score: \(score)"
         scoreLabel.horizontalAlignmentMode = .left
         scoreLabel.position = CGPoint(x: self.frame.size.width/2.5 * -1, y: self.frame.size.height/2.3)
         scoreLabel.fontName = "AmericanTypewriter-Bold"
-        
         
         scoreLabel.fontSize = 36
         scoreLabel.fontColor = UIColor.white
@@ -96,11 +101,34 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         }
     }
     
+    func spawnLives()
+    {
+        livesLabel = SKLabelNode(fontNamed: "Chalkduster")
+        livesLabel.text = "Lives: \(lives)"
+        livesLabel.horizontalAlignmentMode = .right
+        livesLabel.position = CGPoint(x: self.frame.size.width/2.5, y: self.frame.size.height/2.3)
+        livesLabel.fontName = "AmericanTyperwriter-Bold"
+        
+        livesLabel.fontSize = 36
+        livesLabel.fontColor = UIColor.white
+        livesLabel.name = "lives"
+        self.addChild(livesLabel)
+    }
+    
+    func adjustLives(by points: Int)
+    {
+        lives -= points
+        if let lives = childNode(withName: "lives") as? SKLabelNode
+        {
+            lives.text = String(format: "Lives: %01u", self.lives)
+        }
+    }
+    
     @objc func addAcorn()
     {
         let acorn = SKSpriteNode(imageNamed: "acorn-1")
         
-        let randomAcornPosition = GKRandomDistribution(lowestValue: -414, highestValue: 414)
+        let randomAcornPosition = GKRandomDistribution(lowestValue: -410, highestValue: 410)
         let position = CGFloat(randomAcornPosition.nextInt())
         
         acorn.name = "acorn"
@@ -114,17 +142,24 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         acorn.physicsBody?.contactTestBitMask = squirrelCategory
         acorn.physicsBody?.collisionBitMask = 1
         
-        self.addChild(acorn)
-        
-        let animationDuration:TimeInterval = 6
-        
-        var actionArray = [SKAction]()
-        
-        actionArray.append(SKAction.move(to: CGPoint(x: position, y: -acorn.size.height), duration: animationDuration))
-        
-        //actionArray.append(SKAction.removeFromParent())
-        
-        acorn.run(SKAction.sequence(actionArray))
+        if !acornspawning
+        {
+            //Replace 5 with variable that will decrease at a fixed rate the longer the game goes on
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5)
+            {
+                self.addChild(acorn)
+                
+                let animationDuration:TimeInterval = 6
+                
+                var actionArray = [SKAction]()
+                
+                actionArray.append(SKAction.move(to: CGPoint(x: position, y: -acorn.size.height), duration: animationDuration))
+                
+                acorn.run(SKAction.sequence(actionArray))
+                self.acornspawning = false
+            }
+        }
+        acornspawning = true
     }
     
     func collisionBetween(acorn: SKNode, object: SKNode)
@@ -173,6 +208,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         }
         else if nodeNames.contains("acorn") && nodeNames.contains("ground")
         {
+            adjustLives(by: 1)
             contact.bodyB.node!.removeFromParent()
         }
     }
@@ -180,6 +216,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     override func update(_ currentTime: TimeInterval)
     {
         processContacts(forUpdate: currentTime)
+        addAcorn()
     }
     
     func processContacts(forUpdate currentTime: CFTimeInterval)
@@ -195,4 +232,13 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         }
     }
 
+    func checkLives()
+    {
+        if lives <= 0
+        {
+            lives = 0
+            //self.SKView.paused
+            //Somehow stop the game
+        }
+    }
 }
