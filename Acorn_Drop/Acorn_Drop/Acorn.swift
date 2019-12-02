@@ -21,6 +21,4 @@ class Acorn {
         acorn_image = UIImageView(frame:CGRect(x:x, y:y, width:50, height:50))
         acorn_image.image = UIImage(named: "acorn.jpg")
     }
-
-    
 }

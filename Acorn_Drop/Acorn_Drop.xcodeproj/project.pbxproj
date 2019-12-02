@@ -15,6 +15,9 @@
 		854FC768237A0EB10037A76C /* scores.json in Resources */ = {isa = PBXBuildFile; fileRef = 854FC767237A0EB00037A76C /* scores.json */; };
 		85A143372375D57B0085B6DF /* Acorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A143362375D57B0085B6DF /* Acorn.swift */; };
 		85A57A5F2385AD07000714DC /* LeaderboardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A57A5E2385AD07000714DC /* LeaderboardScreen.swift */; };
+		85E1B88D238C3EDC00C52B44 /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B88C238C3EDC00C52B44 /* MusicPlayer.swift */; };
+		85E1B897238D1C4E00C52B44 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B896238D1C4E00C52B44 /* Player.swift */; };
+		85E1B899238D1C8700C52B44 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 85E1B898238D1C8700C52B44 /* backgroundMusic.mp3 */; };
 		B0AB48092375CC3000C8CFAD /* PlayerMovement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB48082375CC3000C8CFAD /* PlayerMovement.swift */; };
 		B0C0D5AB2373296700BAFE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */; };
 		B0C0D5AD2373296700BAFE0E /* TitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5AC2373296700BAFE0E /* TitleScreenViewController.swift */; };
@@ -55,6 +58,9 @@
 		854FC767237A0EB00037A76C /* scores.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = scores.json; sourceTree = "<group>"; };
 		85A143362375D57B0085B6DF /* Acorn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acorn.swift; sourceTree = "<group>"; };
 		85A57A5E2385AD07000714DC /* LeaderboardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardScreen.swift; sourceTree = "<group>"; };
+		85E1B88C238C3EDC00C52B44 /* MusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
+		85E1B896238D1C4E00C52B44 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		85E1B898238D1C8700C52B44 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroundMusic.mp3; path = "../../../../../Users/kaitlynkottlowski/Music/iTunes/iTunes Media/Music/David Fesliyan/Fesliyan Studios/backgroundMusic.mp3"; sourceTree = "<group>"; };
 		B0AB48082375CC3000C8CFAD /* PlayerMovement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMovement.swift; sourceTree = "<group>"; };
 		B0C0D5A72373296700BAFE0E /* Acorn_Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acorn_Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		85E1B88B238C3EC900C52B44 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				85E1B898238D1C8700C52B44 /* backgroundMusic.mp3 */,
+				85E1B88C238C3EDC00C52B44 /* MusicPlayer.swift */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		B0C0D59E2373296700BAFE0E = {
 			isa = PBXGroup;
 			children = (
@@ -124,12 +139,14 @@
 			isa = PBXGroup;
 			children = (
 				B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */,
+				85E1B88B238C3EC900C52B44 /* Sound */,
 				85A57A5E2385AD07000714DC /* LeaderboardScreen.swift */,
 				B0C0D5AC2373296700BAFE0E /* TitleScreenViewController.swift */,
 				3A6DC6BF2385A25100101DE5 /* TitleScene.swift */,
 				3A6DC6C22385A4C900101DE5 /* TitleScene.sks */,
 				B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */,
 				B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */,
+				85E1B896238D1C4E00C52B44 /* Player.swift */,
 				B0F74CF6237C63AC00AAEA3A /* GameScene.sks */,
 				B0AB48082375CC3000C8CFAD /* PlayerMovement.swift */,
 				B0C0D5D823732C8D00BAFE0E /* MainGameViewController.swift */,
@@ -270,6 +287,7 @@
 			files = (
 				B0F74CF7237C63AC00AAEA3A /* GameScene.sks in Resources */,
 				B0C0D5B52373296800BAFE0E /* LaunchScreen.storyboard in Resources */,
+				85E1B899238D1C8700C52B44 /* backgroundMusic.mp3 in Resources */,
 				B0C0D5B22373296800BAFE0E /* Assets.xcassets in Resources */,
 				854FC768237A0EB10037A76C /* scores.json in Resources */,
 				B0C0D5B02373296700BAFE0E /* Main.storyboard in Resources */,
@@ -302,6 +320,7 @@
 				3A9CDB0D238378F400738E63 /* Sides.swift in Sources */,
 				B0C0D5D923732C8D00BAFE0E /* MainGameViewController.swift in Sources */,
 				85A143372375D57B0085B6DF /* Acorn.swift in Sources */,
+				85E1B88D238C3EDC00C52B44 /* MusicPlayer.swift in Sources */,
 				B0C0D5AD2373296700BAFE0E /* TitleScreenViewController.swift in Sources */,
 				B0C0D5AD2373296700BAFE0E /* TitleScreenViewController.swift in Sources */,
 				B0C0D5DD23732DEC00BAFE0E /* LeaderboardViewController.swift in Sources */,
@@ -310,6 +329,7 @@
 				854FC766237A0D810037A76C /* ScoreData.swift in Sources */,
 				85A57A5F2385AD07000714DC /* LeaderboardScreen.swift in Sources */,
 				B0C0D5DB23732DDE00BAFE0E /* SettingsViewController.swift in Sources */,
+				85E1B897238D1C4E00C52B44 /* Player.swift in Sources */,
 				3A6DC6C02385A25100101DE5 /* TitleScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

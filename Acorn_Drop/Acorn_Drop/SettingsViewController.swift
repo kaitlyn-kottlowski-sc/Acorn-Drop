@@ -8,21 +8,45 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController
+class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
 {
+   
     public var someAttribute = 0
+    private var squirrelCostumes = ["Default", "Poncho", "Cat", "Football Player", "Hotdog", "Icecream Cone", "Astronaut"]
+    private var squirrelPlayerTypes = ["Squirrel", "poncho_squirrel","cat_squirrel","football_squirrel","hotdog_squirrel","icecream_squirrel", "astronaut_squirrel"]
+    private var squirrelBackgrounds = ["squirrel_background", "poncho_background", "cat_background", "football_background", "hotdog_background", "icecream_background", "astronaut_background"]
+    private var playerType: String = "Squirrel"
+    private var playerBackground: String? = "Squirrel"
 
+    @IBOutlet weak var chooseSquirrel: UIPickerView!
+    @IBOutlet weak var chosenSquirrelImage: UIImageView!
+
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         print("Some attribute =  \(someAttribute)")
-
-        // Do any additional setup after loading the view.
+        
+        self.chooseSquirrel.dataSource = self
+        self.chooseSquirrel.delegate = self
+        chooseSquirrel.selectRow(Player.getType(), inComponent: 0, animated: true)
     }
     
     @IBAction func goBackToTitle(_ sender: Any)
     {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func enableBackgroundMusic(_ sender: UISwitch)
+    {
+       if sender.isOn
+       {
+           MusicPlayer.playBackgroundMusic()
+       }
+       else
+       {
+           MusicPlayer.stopBackgroundMusic()
+       }
     }
     
     override func prepare(for segue: UIStoryboardSegue,
@@ -35,15 +59,32 @@ class SettingsViewController: UIViewController
         }
     }
     
+    // Functions for squirrell picker
+      func numberOfComponents(in pickerView: UIPickerView) -> Int {
+             return 1
+         }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+      func pickerView(_ pickerView: UIPickerView,
+          numberOfRowsInComponent component: Int) -> Int {
+              // Row count: rows equals array length.
+              return squirrelCostumes.count
+      }
+    
+      func pickerView(_ pickerView: UIPickerView,
+          titleForRow row: Int,
+          forComponent component: Int) -> String? {
+              return squirrelCostumes[row]
+      }
+    
+    // Capture the picker view selection
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+           
+         playerType = squirrelPlayerTypes[row]
+             playerBackground = squirrelBackgrounds[row]
+        
+      chosenSquirrelImage.image = UIImage(named: playerType)
+       Player.setSquirrelName(i: playerType)
+      Player.setSquirrelBackground(b: playerBackground!)
+       Player.setType(t: row)
+   }
 }

@@ -23,6 +23,11 @@ class ViewController: UIViewController
     
     private let roundedness = 8
     
+    let screenHeight = UIScreen.main.bounds.height
+    let screenWidth = UIScreen.main.bounds.width
+    let divider = 1.3333
+    let buffer = 10
+    
     public var attribute = 0
     
     private var orange = UIColor(red: 255/255, green: 127/255, blue: 38/255, alpha: 1)
@@ -30,6 +35,8 @@ class ViewController: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // start background music
+        MusicPlayer.startBackgroundMusic()
         let buttonArray = [startButton, leaderboardButton, settingButton]
         
         //create rounded buttons and add correct button color
@@ -61,7 +68,6 @@ class ViewController: UIViewController
         }
                 
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue,                                 sender: Any?)
     {

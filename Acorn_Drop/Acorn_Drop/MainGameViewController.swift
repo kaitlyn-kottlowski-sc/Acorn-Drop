@@ -31,11 +31,16 @@ class MainGameViewController: UIViewController {
                  //Present the scene
                 view.presentScene(scene)
             }
-            
-            view.ignoresSiblingOrder = true
-            view.showsFPS = true
-            view.showsNodeCount = true
-            view.showsPhysics = true
+//            
+//            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+//            backgroundImage.image = UIImage(named: "galaxy")
+//            backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+//            view.insertSubview(backgroundImage, at: 0)
+//            
+            //view.ignoresSiblingOrder = true
+            //view.showsFPS = true
+            //view.showsNodeCount = true
+            //view.showsPhysics = true
             
         }
     }
