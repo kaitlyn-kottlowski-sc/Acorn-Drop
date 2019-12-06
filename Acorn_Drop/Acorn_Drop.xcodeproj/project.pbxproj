@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A4924292398222200078726 /* BitMaskCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4924282398222200078726 /* BitMaskCategories.swift */; };
 		3A6DC6C02385A25100101DE5 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6DC6BF2385A25100101DE5 /* TitleScene.swift */; };
 		3A6DC6C32385A4C900101DE5 /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3A6DC6C22385A4C900101DE5 /* TitleScene.sks */; };
 		3A9CDB0B2383740200738E63 /* TitleScreenAcorn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9CDB0A2383740200738E63 /* TitleScreenAcorn.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A4924282398222200078726 /* BitMaskCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitMaskCategories.swift; sourceTree = "<group>"; };
 		3A6DC6BF2385A25100101DE5 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
 		3A6DC6C22385A4C900101DE5 /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 		3A9CDB0A2383740200738E63 /* TitleScreenAcorn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScreenAcorn.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				85A57A5E2385AD07000714DC /* LeaderboardScreen.swift */,
 				B0C0D5AC2373296700BAFE0E /* TitleScreenViewController.swift */,
 				3A6DC6BF2385A25100101DE5 /* TitleScene.swift */,
+				3A4924282398222200078726 /* BitMaskCategories.swift */,
 				3A6DC6C22385A4C900101DE5 /* TitleScene.sks */,
 				B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */,
 				B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */,
@@ -315,6 +318,7 @@
 				B0AB48092375CC3000C8CFAD /* PlayerMovement.swift in Sources */,
 				3A9CDB0D238378F400738E63 /* Sides.swift in Sources */,
 				B0C0D5D923732C8D00BAFE0E /* MainGameViewController.swift in Sources */,
+				3A4924292398222200078726 /* BitMaskCategories.swift in Sources */,
 				85A143372375D57B0085B6DF /* Acorn.swift in Sources */,
 				85E1B88D238C3EDC00C52B44 /* MusicPlayer.swift in Sources */,
 				B0C0D5AD2373296700BAFE0E /* TitleScreenViewController.swift in Sources */,
