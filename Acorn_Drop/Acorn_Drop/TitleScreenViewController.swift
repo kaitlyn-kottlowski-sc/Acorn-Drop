@@ -36,7 +36,7 @@ class ViewController: UIViewController
         super.viewDidLoad()
         
         // start background music
-        MusicPlayer.startBackgroundMusic()
+        //MusicPlayer.startBackgroundMusic()
         let buttonArray = [startButton, leaderboardButton, settingButton]
         
         //create rounded buttons and add correct button color
