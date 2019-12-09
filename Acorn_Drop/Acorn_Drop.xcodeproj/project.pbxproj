@@ -31,8 +31,9 @@
 		B0C0D5DB23732DDE00BAFE0E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */; };
 		B0C0D5DD23732DEC00BAFE0E /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */; };
 		B0ECFF55239AB85C00BDECA2 /* GameOverScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0ECFF54239AB85C00BDECA2 /* GameOverScene.sks */; };
-		B0ECFF57239ABE7D00BDECA2 /* CheckGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ECFF56239ABE7D00BDECA2 /* CheckGame.swift */; };
 		B0F74CF7237C63AC00AAEA3A /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0F74CF6237C63AC00AAEA3A /* GameScene.sks */; };
+		EA22622A239EF5FA0087C8A7 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA226229239EF5FA0087C8A7 /* GameOverViewController.swift */; };
+		EA22622C239EF82C0087C8A7 /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA22622B239EF82C0087C8A7 /* GameOver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +84,9 @@
 		B0C0D5DA23732DDE00BAFE0E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B0C0D5DC23732DEC00BAFE0E /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
 		B0ECFF54239AB85C00BDECA2 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
-		B0ECFF56239ABE7D00BDECA2 /* CheckGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckGame.swift; sourceTree = "<group>"; };
 		B0F74CF6237C63AC00AAEA3A /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		EA226229239EF5FA0087C8A7 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		EA22622B239EF82C0087C8A7 /* GameOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,9 +158,10 @@
 				85E1B896238D1C4E00C52B44 /* Player.swift */,
 				B0F74CF6237C63AC00AAEA3A /* GameScene.sks */,
 				B0AB48082375CC3000C8CFAD /* GameScene.swift */,
-				B0ECFF56239ABE7D00BDECA2 /* CheckGame.swift */,
 				B0C0D5D823732C8D00BAFE0E /* MainGameViewController.swift */,
 				B0C0D5AE2373296700BAFE0E /* Main.storyboard */,
+				EA226229239EF5FA0087C8A7 /* GameOverViewController.swift */,
+				EA22622B239EF82C0087C8A7 /* GameOver.swift */,
 				B0ECFF54239AB85C00BDECA2 /* GameOverScene.sks */,
 				3A9CDB0A2383740200738E63 /* TitleScreenAcorn.swift */,
 				3A9CDB0C238378F400738E63 /* Sides.swift */,
@@ -327,13 +330,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0AB48092375CC3000C8CFAD /* GameScene.swift in Sources */,
+				EA22622C239EF82C0087C8A7 /* GameOver.swift in Sources */,
 				3A9CDB0D238378F400738E63 /* Sides.swift in Sources */,
-				B0ECFF57239ABE7D00BDECA2 /* CheckGame.swift in Sources */,
 				B0C0D5D923732C8D00BAFE0E /* MainGameViewController.swift in Sources */,
 				3A4924292398222200078726 /* BitMaskCategories.swift in Sources */,
 				85A143372375D57B0085B6DF /* Acorn.swift in Sources */,
 				85E1B88D238C3EDC00C52B44 /* MusicPlayer.swift in Sources */,
 				B0C0D5AD2373296700BAFE0E /* TitleScreenViewController.swift in Sources */,
+				EA22622A239EF5FA0087C8A7 /* GameOverViewController.swift in Sources */,
 				B0C0D5AD2373296700BAFE0E /* TitleScreenViewController.swift in Sources */,
 				B0C0D5DD23732DEC00BAFE0E /* LeaderboardViewController.swift in Sources */,
 				3A9CDB0B2383740200738E63 /* TitleScreenAcorn.swift in Sources */,
