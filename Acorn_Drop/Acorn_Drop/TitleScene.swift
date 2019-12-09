@@ -12,7 +12,7 @@ import GameplayKit
 class TitleScene: SKScene, SKPhysicsContactDelegate{
     
     //Timer delay for acorn spawn
-    let acornReset = 30
+    let acornReset = 20
     
     var acornTimer = 0
     //controls how many acorns are placed on screen
