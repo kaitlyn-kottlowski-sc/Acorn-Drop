@@ -13,6 +13,8 @@ import GameplayKit
 
 class MainGameViewController: UIViewController {
 
+    @IBOutlet weak var leaderBoardButton: UIButton!
+    
 //    var gravity: UIGravityBehavior!
 //    var animator: UIDynamicAnimator!
 //    var acornArray = Array<UIImageView>()
@@ -21,6 +23,8 @@ class MainGameViewController: UIViewController {
 //    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let gameStatus: Bool! = Checkgame.getGameStatus()
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -41,7 +45,16 @@ class MainGameViewController: UIViewController {
             //view.showsFPS = true
             //view.showsNodeCount = true
             //view.showsPhysics = true
-            
+            if(gameStatus == true)
+            {
+                print("HI")
+                //leaderBoardButton.isHidden = true
+            }
+            else
+            {
+                print("bye")
+                //leaderBoardButton.isHidden = false
+            }
         }
     }
     

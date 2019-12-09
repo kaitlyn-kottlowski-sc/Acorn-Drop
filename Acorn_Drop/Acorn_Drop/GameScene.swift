@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class PlayerMovement: SKScene, SKPhysicsContactDelegate
+class GameScene: SKScene, SKPhysicsContactDelegate
 {
     //static var sharedInstance = PlayerMovement()
     var screenSize = UIScreen.main.bounds
