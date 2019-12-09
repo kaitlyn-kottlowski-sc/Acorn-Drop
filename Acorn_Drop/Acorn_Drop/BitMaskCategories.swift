@@ -10,6 +10,7 @@ import Foundation
 import SpriteKit
 
 // set the bit mask categories
-//let TitleScreenAcorn : UInt32 = 0x1 << 1
-//let SideCategory
+let CollisionObject : UInt32 = 0x1 << 1
+let TitleScreenAcornCategory : UInt32 = 0x1 << 2
+let SideCategory : UInt32 = 0x1 << 3
 

@@ -18,7 +18,7 @@ class TitleScreenAcorn: SKNode{
         let random: CGFloat = randomNumber == 0 ? 1 : -1
         
         //add buffer to starting x coordinate
-        let buffer = 100
+        let buffer = 150
         var xStart = CGFloat(arc4random_uniform(UInt32(UIScreen.main.bounds.width)))
         
         if random > 0{
@@ -38,6 +38,12 @@ class TitleScreenAcorn: SKNode{
         
         //adds image to object
         self.addChild(image)
+        
+        //set the bit mask properties
+        self.physicsBody?.categoryBitMask = CollisionObject
+        self.physicsBody?.collisionBitMask = CollisionObject
+        //self.physicsBody?.contactTestBitMask = CollisionObject
+        
         
     }
     

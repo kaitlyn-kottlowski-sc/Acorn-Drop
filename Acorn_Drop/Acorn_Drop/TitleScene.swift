@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class TitleScene: SKScene{
+class TitleScene: SKScene, SKPhysicsContactDelegate{
     
     //Timer delay for acorn spawn
     let acornReset = 30
@@ -18,6 +18,8 @@ class TitleScene: SKScene{
     //controls how many acorns are placed on screen
     var accornCount = 45
     
+    var touchLocation = CGPoint()
+    
     //used for creating bowl
     let screenHeight = UIScreen.main.bounds.height
     let screenWidth = UIScreen.main.bounds.width
@@ -25,7 +27,7 @@ class TitleScene: SKScene{
     let buffer = CGFloat(10)
     
     var acornArray: [TitleScreenAcorn] = []
-    
+
     
     override func didMove(to view: SKView){
         let floor = Side(xLocation: 0, yLocation: -screenHeight/divider, width: screenWidth * 2, height: buffer)
@@ -37,15 +39,32 @@ class TitleScene: SKScene{
         self.addChild(rightWall)
     }
     
+    override func sceneDidLoad() {
+        // set the game scene as the physics protocol delegate
+        self.physicsWorld.contactDelegate = self
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for acorn in acornArray{
-            acorn.move(touchLocation: (touches.first?.location(in: self))!)
+        for touch in touches{
+            touchLocation = touch.location(in: self)
+            for acorn in acornArray{
+                acorn.move(touchLocation: (touches.first?.location(in: self))!)
+                if acorn.position.x == touchLocation.x && acorn.position.y == touchLocation.y{
+                    break
+                }
+            }
         }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for acorn in acornArray{
-            acorn.move(touchLocation: (touches.first?.location(in: self))!)
+        for touch in touches{
+            touchLocation = touch.location(in: self)
+            for acorn in acornArray{
+                acorn.move(touchLocation: (touches.first?.location(in: self))!)
+                if acorn.position.x == touchLocation.x && acorn.position.y == touchLocation.y{
+                    break
+                }
+            }
         }
     }
     
