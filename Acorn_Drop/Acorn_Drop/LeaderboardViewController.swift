@@ -25,6 +25,12 @@ class LeaderboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Reference: https://stackoverflow.com/questions/27064790/remove-subviews-from-scrollview-swift/29889746
+        let subViews = self.scoreScrollView.subviews
+        for subview in subViews{
+            subview.removeFromSuperview()
+        }
 
         highScoreList = ScoreData.getHighScoreList()
         LeaderboardScreen.setScoresToScreen(view: scoreScrollView, scoreList: highScoreList)

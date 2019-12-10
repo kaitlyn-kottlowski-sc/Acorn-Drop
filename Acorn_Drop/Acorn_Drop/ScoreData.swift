@@ -24,9 +24,7 @@ class ScoreData : Codable{
         // Resource #2: https://www.youtube.com/watch?v=ih20QtEVCa0
         
         guard let url = Bundle.main.url(forResource: "scores", withExtension: "json") else {return (Any).self}
-
         guard let data = try? Data(contentsOf: url) else {return (Any).self}
-        
         guard let json = try? JSONSerialization.jsonObject(with: data, options: []) else {return (Any).self}
         
         return json
@@ -49,7 +47,11 @@ class ScoreData : Codable{
             }
         }
         
-          highScoreList = highScoreList.sorted(by: {$0.score > $1.score})
+        highScoreList = highScoreList.sorted(by: {$0.score > $1.score})
+        
+        if highScoreList.count == 6 {
+            highScoreList.remove(at: 5)
+        }
         
         return highScoreList
     }
@@ -66,8 +68,7 @@ class ScoreData : Codable{
             do {
                    let encoder = JSONEncoder()
                    encoder.outputFormatting = .prettyPrinted
-                let newScore = Scores(userName: userNameInput, score: scoreInput)
-                let JsonData = try encoder.encode(newScore)
+                let JsonData = try encoder.encode(highScoreList)
                    try JsonData.write(to: url)
                } catch { print("error")}
         }
