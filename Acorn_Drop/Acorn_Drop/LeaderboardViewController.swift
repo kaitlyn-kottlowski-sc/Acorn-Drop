@@ -18,24 +18,31 @@ class LeaderboardViewController: UIViewController {
     var myJSON = JSONEncoder()
     var highScoreList = [Scores]()
     
- 
+    @IBOutlet weak var userNameInput: UITextField!
+    @IBOutlet weak var scoreInput: UITextField!
+    
     @IBOutlet weak var scoreScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ScoreData.decodeData(userName: "nick", score: 200)
-        highScoreList = ScoreData.getJSONData()
+        highScoreList = ScoreData.getHighScoreList()
         LeaderboardScreen.setScoresToScreen(view: scoreScrollView, scoreList: highScoreList)
         LeaderboardScreen.setTitle(view: self.view, leaderboardTitle: leaderboardTitle)
-             
-//        LeaderboardScreen.setAcornBorder(view: self.view)
-        
+    
     }
     
     
-
-
-    
+    @IBAction func AddScore(_ sender: Any) {
+        
+        let userName: String = userNameInput.text!
+        let score: String = scoreInput.text!
+        
+        if !userName.isEmpty && !score.isEmpty {
+            ScoreData.decodeData(userNameInput: userName, scoreInput: Int(score) ?? 0)
+            
+               viewDidLoad()
+        }
+    }
 }
   
