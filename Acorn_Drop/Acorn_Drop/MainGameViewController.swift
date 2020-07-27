@@ -12,7 +12,7 @@ import GameplayKit
 
 
 class MainGameViewController: UIViewController {
-
+    
 //    var gravity: UIGravityBehavior!
 //    var animator: UIDynamicAnimator!
 //    var acornArray = Array<UIImageView>()
@@ -21,17 +21,15 @@ class MainGameViewController: UIViewController {
 //    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFill
-                
                  //Present the scene
                 view.presentScene(scene)
             }
-//            
+//
 //            let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
 //            backgroundImage.image = UIImage(named: "galaxy")
 //            backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
@@ -41,7 +39,6 @@ class MainGameViewController: UIViewController {
             //view.showsFPS = true
             //view.showsNodeCount = true
             //view.showsPhysics = true
-            
         }
     }
     

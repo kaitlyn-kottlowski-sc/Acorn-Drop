@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class PlayerMovement: SKScene, SKPhysicsContactDelegate
+class GameScene: SKScene, SKPhysicsContactDelegate
 {
     //static var sharedInstance = PlayerMovement()
     var screenSize = UIScreen.main.bounds
@@ -20,6 +20,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     var playerSize = CGSize(width: 50, height: 50)
     var scoreLabel: SKLabelNode!
     var score: Int = 0
+    let playerSpeed: Double = 0.5
     
     var gameTimer:Timer!
     var possibleFallingObjects = ["acorn"]
@@ -43,7 +44,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         spawnLives()
         
         //May need this as its a timer before the acorns start to fall
-        //gameTimer = Timer.scheduledTimer(timeInterval: 0.75, target: self, selector: #selector(addAcorn), userInfo: nil, repeats: true)
+        //gameTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(addAcorn), userInfo: nil, repeats: true)
     }
     
     func inputBackground()
@@ -63,7 +64,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         player.name = "squirrel"
         //player.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 520)
         player.size = CGSize(width: CGFloat(screenSize.width/3), height: CGFloat(screenSize.height/5))
-        player.position = CGPoint(x: self.frame.midX, y: self.frame.midY-200)
+        player.position = CGPoint(x: self.frame.midX, y: self.frame.midY-560)
         
         player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
         player.physicsBody?.isDynamic = false
@@ -96,7 +97,6 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         score += points
         if let score = childNode(withName: "score") as? SKLabelNode
         {
-            print("score \(score)")
             score.text = String(format: "Score: %01u", self.score)
         }
     }
@@ -117,7 +117,14 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     func adjustLives(by points: Int)
     {
-        lives -= points
+        if(lives == 0)
+        {
+            lives = 0
+        }
+        else
+        {
+            lives -= points
+        }
         if let lives = childNode(withName: "lives") as? SKLabelNode
         {
             lives.text = String(format: "Lives: %01u", self.lives)
@@ -127,34 +134,34 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     @objc func addAcorn()
     {
         let acorn = SKSpriteNode(imageNamed: "acorn-1")
-        
+
         let randomAcornPosition = GKRandomDistribution(lowestValue: -410, highestValue: 410)
         let position = CGFloat(randomAcornPosition.nextInt())
-        
+
         acorn.name = "acorn"
         acorn.size = CGSize(width: 50, height: 50)
         acorn.position = CGPoint(x: position, y: self.frame.size.height - acorn.size.height)
-        
+
         acorn.physicsBody = SKPhysicsBody(circleOfRadius: acorn.size.width/2)
         acorn.physicsBody?.isDynamic = true
-        
+
         acorn.physicsBody?.categoryBitMask = acornCategory
         acorn.physicsBody?.contactTestBitMask = squirrelCategory
         acorn.physicsBody?.collisionBitMask = 1
-        
+
         if !acornspawning
         {
             //Replace 5 with variable that will decrease at a fixed rate the longer the game goes on
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2)
             {
                 self.addChild(acorn)
-                
+
                 let animationDuration:TimeInterval = 6
-                
+
                 var actionArray = [SKAction]()
-                
+
                 actionArray.append(SKAction.move(to: CGPoint(x: position, y: -acorn.size.height), duration: animationDuration))
-                
+
                 acorn.run(SKAction.sequence(actionArray))
                 self.acornspawning = false
             }
@@ -215,6 +222,7 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
     
     override func update(_ currentTime: TimeInterval)
     {
+        checkLives()
         processContacts(forUpdate: currentTime)
         addAcorn()
     }
@@ -237,8 +245,10 @@ class PlayerMovement: SKScene, SKPhysicsContactDelegate
         if lives <= 0
         {
             lives = 0
-            //self.SKView.paused
-            //Somehow stop the game
+        }
+        else if lives > 3
+        {
+            lives = 0
         }
     }
 }

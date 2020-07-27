@@ -36,7 +36,7 @@ class ViewController: UIViewController
         super.viewDidLoad()
         
         // start background music
-        MusicPlayer.startBackgroundMusic()
+        //MusicPlayer.startBackgroundMusic()
         let buttonArray = [startButton, leaderboardButton, settingButton]
         
         //create rounded buttons and add correct button color
@@ -44,13 +44,7 @@ class ViewController: UIViewController
             button?.layer.cornerRadius = CGFloat(roundedness)
             button?.backgroundColor = orange
         }
-        // create rounded buttons
-        //startButton.layer.cornerRadius = CGFloat(roundedness)
-        //leaderboardButton.layer.cornerRadius = CGFloat(roundedness)
-        //settingButton.layer.cornerRadius = CGFloat(roundedness)
-        //startButton.backgroundColor = orange
-        //leaderboardButton.backgroundColor = orange
-        //settingButton.backgroundColor = orange
+
         
         //Load the SKScene from 'TitleScene.sks'
         if let view = self.view as! SKView? {

@@ -19,6 +19,11 @@ class Side: SKNode{
         
         //applys a physics body to the object
         self.physicsBody?.isDynamic = false
+        
+        //set the bit mask properties
+        self.physicsBody?.categoryBitMask = CollisionObject
+        self.physicsBody?.collisionBitMask = CollisionObject
+        
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
