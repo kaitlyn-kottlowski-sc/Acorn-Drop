@@ -22,6 +22,7 @@ class ViewController: UIViewController
     
     
     private let roundedness = 8
+    private var playMusic = true;
     
     let screenHeight = UIScreen.main.bounds.height
     let screenWidth = UIScreen.main.bounds.width
@@ -36,36 +37,41 @@ class ViewController: UIViewController
         super.viewDidLoad()
         
         // start background music
-        //MusicPlayer.startBackgroundMusic()
-        let buttonArray = [startButton, leaderboardButton, settingButton]
-        
-        //create rounded buttons and add correct button color
-        for button in buttonArray{
-            button?.layer.cornerRadius = CGFloat(roundedness)
-            button?.backgroundColor = orange
+        if MusicPlayer.isOn {
+            MusicPlayer.startBackgroundMusic()
         }
-
-        
-        //Load the SKScene from 'TitleScene.sks'
-        if let view = self.view as! SKView? {
-            if let scene = SKScene(fileNamed: "TitleScene"){
-                scene.scaleMode = .aspectFill
-                
-                view.presentScene(scene)
-            }
-            
-            view.ignoresSiblingOrder = true
-            
-            view.showsFPS = true
-            view.showsNodeCount = true
-            view.showsPhysics = true
-        }
-                
     }
     
-    override func prepare(for segue: UIStoryboardSegue,                                 sender: Any?)
+    override func viewDidAppear(_ animated: Bool) {
+                let buttonArray = [startButton, leaderboardButton, settingButton]
+          
+          //create rounded buttons and add correct button color
+          for button in buttonArray{
+              button?.layer.cornerRadius = CGFloat(roundedness)
+              button?.backgroundColor = orange
+          }
+
+          
+        //  Load the SKScene from 'TitleScene.sks'
+          if let view = self.view as! SKView? {
+              if let scene = SKScene(fileNamed: "TitleScene"){
+                  scene.scaleMode = .aspectFill
+                  
+                  view.presentScene(scene)
+              }
+              
+              view.ignoresSiblingOrder = true
+              
+              view.showsFPS = true
+              view.showsNodeCount = true
+              view.showsPhysics = true
+          }
+             
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if let destinationViewController =                                 segue.destination as? SettingsViewController
+        if let destinationViewController = segue.destination as? SettingsViewController
         {
             destinationViewController.someAttribute = 5
         }

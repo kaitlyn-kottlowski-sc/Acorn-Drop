@@ -21,12 +21,13 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var chooseSquirrel: UIPickerView!
     @IBOutlet weak var chosenSquirrelImage: UIImageView!
 
+    @IBOutlet weak var enableBackgroundMusicToggle: UISwitch!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print("Some attribute =  \(someAttribute)")
         
+        enableBackgroundMusicToggle.isOn = MusicPlayer.isOn;
         self.chooseSquirrel.dataSource = self
         self.chooseSquirrel.delegate = self
         chooseSquirrel.selectRow(Player.getType(), inComponent: 0, animated: true)
@@ -42,10 +43,12 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
        if sender.isOn
        {
            MusicPlayer.playBackgroundMusic()
+        MusicPlayer.isOn = true
        }
        else
        {
            MusicPlayer.stopBackgroundMusic()
+        MusicPlayer.isOn = false
        }
     }
     

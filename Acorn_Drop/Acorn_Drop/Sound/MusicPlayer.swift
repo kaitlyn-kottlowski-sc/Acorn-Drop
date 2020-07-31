@@ -11,6 +11,7 @@ import AVFoundation
 class MusicPlayer {
     
     static var audioPlayer: AVAudioPlayer?
+    static var isOn: Bool = true
 
     static func startBackgroundMusic() {
         if let bundle = Bundle.main.path(forResource: "backgroundMusic", ofType: "mp3") {
@@ -33,6 +34,10 @@ class MusicPlayer {
     
     static func stopBackgroundMusic(){
         audioPlayer?.stop()
+    }
+    
+    static func isPlaying() -> Bool? {
+        return audioPlayer?.isPlaying
     }
     
 }
