@@ -21,7 +21,7 @@
 		85E1B897238D1C4E00C52B44 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B896238D1C4E00C52B44 /* Player.swift */; };
 		B0AB48092375CC3000C8CFAD /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AB48082375CC3000C8CFAD /* GameScene.swift */; };
 		B0C0D5AB2373296700BAFE0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */; };
-		B0C0D5AD2373296700BAFE0E /* TitleScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5AC2373296700BAFE0E /* TitleScreenViewController.swift */; };
+		B0C0D5AD2373296700BAFE0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0D5AC2373296700BAFE0E /* ViewController.swift */; };
 		B0C0D5B02373296700BAFE0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D5AE2373296700BAFE0E /* Main.storyboard */; };
 		B0C0D5B22373296800BAFE0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D5B12373296800BAFE0E /* Assets.xcassets */; };
 		B0C0D5B52373296800BAFE0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C0D5B32373296800BAFE0E /* LaunchScreen.storyboard */; };
@@ -69,7 +69,7 @@
 		B0AB48082375CC3000C8CFAD /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B0C0D5A72373296700BAFE0E /* Acorn_Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Acorn_Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C0D5AA2373296700BAFE0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0C0D5AC2373296700BAFE0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0C0D5AC2373296700BAFE0E /* ViewController.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B0C0D5AF2373296700BAFE0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0C0D5B12373296800BAFE0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0C0D5B42373296800BAFE0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Jesse Luangaphayvong";
 				TargetAttributes = {
 					B0C0D5A62373296700BAFE0E = {
@@ -338,7 +338,6 @@
 				85E1B88D238C3EDC00C52B44 /* MusicPlayer.swift in Sources */,
 				B0C0D5AD2373296700BAFE0E /* ViewController.swift in Sources */,
 				EA22622A239EF5FA0087C8A7 /* GameOverViewController.swift in Sources */,
-				B0C0D5AD2373296700BAFE0E /* ViewController.swift in Sources */,
 				B0C0D5DD23732DEC00BAFE0E /* LeaderboardViewController.swift in Sources */,
 				3A9CDB0B2383740200738E63 /* TitleScreenAcorn.swift in Sources */,
 				B0C0D5AB2373296700BAFE0E /* AppDelegate.swift in Sources */,
